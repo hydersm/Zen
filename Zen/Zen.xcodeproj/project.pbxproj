@@ -10,9 +10,9 @@
 		3C26448B1B43C6A10011C8A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448A1B43C6A10011C8A8 /* main.m */; };
 		3C26448E1B43C6A10011C8A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448D1B43C6A10011C8A8 /* AppDelegate.m */; };
 		3C2644911B43C6A10011C8A8 /* Zen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448F1B43C6A10011C8A8 /* Zen.xcdatamodeld */; };
-		3C2644941B43C6A10011C8A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2644931B43C6A10011C8A8 /* ViewController.m */; };
 		3C2644991B43C6A10011C8A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2644981B43C6A10011C8A8 /* Images.xcassets */; };
 		3C2644A81B43C6A10011C8A8 /* ZenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2644A71B43C6A10011C8A8 /* ZenTests.m */; };
+		3C9BA6851B4644C300DD0DF8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BA6841B4644C300DD0DF8 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,12 +32,12 @@
 		3C26448C1B43C6A10011C8A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C26448D1B43C6A10011C8A8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3C2644901B43C6A10011C8A8 /* Zen.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zen.xcdatamodel; sourceTree = "<group>"; };
-		3C2644921B43C6A10011C8A8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3C2644931B43C6A10011C8A8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3C2644981B43C6A10011C8A8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3C2644A11B43C6A10011C8A8 /* ZenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2644A61B43C6A10011C8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C2644A71B43C6A10011C8A8 /* ZenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZenTests.m; sourceTree = "<group>"; };
+		3C9BA6831B4644C300DD0DF8 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		3C9BA6841B4644C300DD0DF8 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +81,8 @@
 			children = (
 				3C26448C1B43C6A10011C8A8 /* AppDelegate.h */,
 				3C26448D1B43C6A10011C8A8 /* AppDelegate.m */,
-				3C2644921B43C6A10011C8A8 /* ViewController.h */,
-				3C2644931B43C6A10011C8A8 /* ViewController.m */,
+				3C9BA6831B4644C300DD0DF8 /* MainViewController.h */,
+				3C9BA6841B4644C300DD0DF8 /* MainViewController.m */,
 				3C2644981B43C6A10011C8A8 /* Images.xcassets */,
 				3C26448F1B43C6A10011C8A8 /* Zen.xcdatamodeld */,
 				3C2644881B43C6A10011C8A8 /* Supporting Files */,
@@ -216,7 +216,7 @@
 			files = (
 				3C26448E1B43C6A10011C8A8 /* AppDelegate.m in Sources */,
 				3C2644911B43C6A10011C8A8 /* Zen.xcdatamodeld in Sources */,
-				3C2644941B43C6A10011C8A8 /* ViewController.m in Sources */,
+				3C9BA6851B4644C300DD0DF8 /* MainViewController.m in Sources */,
 				3C26448B1B43C6A10011C8A8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +399,7 @@
 				3C2644AD1B43C6A10011C8A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C2644AE1B43C6A10011C8A8 /* Build configuration list for PBXNativeTarget "ZenTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +408,7 @@
 				3C2644B01B43C6A10011C8A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
