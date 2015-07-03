@@ -19,7 +19,7 @@
     self.view = [[UIView alloc] init];
 }
 
-// after view is loaded
+// after view is loaded, do any non view customization
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -27,6 +27,15 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
     
+}
+
+//view has resized, add subviews here
+- (void)viewWillAppear:(BOOL)animated {
+    
+    UILabel *tempView = [[UILabel alloc] initWithFrame:self.view.bounds];
+    tempView.text = @"main view";
+    tempView.textColor = [UIColor blackColor];
+    [self.view addSubview:tempView];
     
 }
 
