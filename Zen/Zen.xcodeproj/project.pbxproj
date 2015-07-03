@@ -12,7 +12,9 @@
 		3C2644911B43C6A10011C8A8 /* Zen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448F1B43C6A10011C8A8 /* Zen.xcdatamodeld */; };
 		3C2644991B43C6A10011C8A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2644981B43C6A10011C8A8 /* Images.xcassets */; };
 		3C2644A81B43C6A10011C8A8 /* ZenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2644A71B43C6A10011C8A8 /* ZenTests.m */; };
-		3C9BA6851B4644C300DD0DF8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BA6841B4644C300DD0DF8 /* MainViewController.m */; };
+		3C88CD861B46FA7B002A7800 /* HSAddCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C88CD851B46FA7B002A7800 /* HSAddCommentViewController.m */; };
+		3C88CD8B1B47145F002A7800 /* HSUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C88CD8A1B47145F002A7800 /* HSUIUtils.m */; };
+		3C9BA6851B4644C300DD0DF8 /* HSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BA6841B4644C300DD0DF8 /* HSMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +38,12 @@
 		3C2644A11B43C6A10011C8A8 /* ZenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2644A61B43C6A10011C8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C2644A71B43C6A10011C8A8 /* ZenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZenTests.m; sourceTree = "<group>"; };
-		3C9BA6831B4644C300DD0DF8 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		3C9BA6841B4644C300DD0DF8 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		3C88CD841B46FA7B002A7800 /* HSAddCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSAddCommentViewController.h; sourceTree = "<group>"; };
+		3C88CD851B46FA7B002A7800 /* HSAddCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSAddCommentViewController.m; sourceTree = "<group>"; };
+		3C88CD891B47145F002A7800 /* HSUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSUIUtils.h; sourceTree = "<group>"; };
+		3C88CD8A1B47145F002A7800 /* HSUIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSUIUtils.m; sourceTree = "<group>"; };
+		3C9BA6831B4644C300DD0DF8 /* HSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMainViewController.h; sourceTree = "<group>"; };
+		3C9BA6841B4644C300DD0DF8 /* HSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +87,12 @@
 			children = (
 				3C26448C1B43C6A10011C8A8 /* AppDelegate.h */,
 				3C26448D1B43C6A10011C8A8 /* AppDelegate.m */,
-				3C9BA6831B4644C300DD0DF8 /* MainViewController.h */,
-				3C9BA6841B4644C300DD0DF8 /* MainViewController.m */,
+				3C9BA6831B4644C300DD0DF8 /* HSMainViewController.h */,
+				3C9BA6841B4644C300DD0DF8 /* HSMainViewController.m */,
+				3C88CD841B46FA7B002A7800 /* HSAddCommentViewController.h */,
+				3C88CD851B46FA7B002A7800 /* HSAddCommentViewController.m */,
+				3C88CD891B47145F002A7800 /* HSUIUtils.h */,
+				3C88CD8A1B47145F002A7800 /* HSUIUtils.m */,
 				3C2644981B43C6A10011C8A8 /* Images.xcassets */,
 				3C26448F1B43C6A10011C8A8 /* Zen.xcdatamodeld */,
 				3C2644881B43C6A10011C8A8 /* Supporting Files */,
@@ -216,7 +226,9 @@
 			files = (
 				3C26448E1B43C6A10011C8A8 /* AppDelegate.m in Sources */,
 				3C2644911B43C6A10011C8A8 /* Zen.xcdatamodeld in Sources */,
-				3C9BA6851B4644C300DD0DF8 /* MainViewController.m in Sources */,
+				3C9BA6851B4644C300DD0DF8 /* HSMainViewController.m in Sources */,
+				3C88CD861B46FA7B002A7800 /* HSAddCommentViewController.m in Sources */,
+				3C88CD8B1B47145F002A7800 /* HSUIUtils.m in Sources */,
 				3C26448B1B43C6A10011C8A8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

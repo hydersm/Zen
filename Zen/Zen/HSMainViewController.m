@@ -6,13 +6,16 @@
 //  Copyright (c) 2015 Hyder. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "HSMainViewController.h"
+#import "AppDelegate.h"
+#import "HSAddCommentViewController.h"
+#import "HSUIUtils.h"
 
-@interface MainViewController ()
+@interface HSMainViewController ()
 
 @end
 
-@implementation MainViewController
+@implementation HSMainViewController
 
 // set view property
 - (void)loadView {
@@ -25,7 +28,7 @@
     
     self.navigationItem.title = @"Zen";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:nil action:nil];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushCommentViewToTop)];
     
 }
 
@@ -36,6 +39,14 @@
     tempView.text = @"main view";
     tempView.textColor = [UIColor blackColor];
     [self.view addSubview:tempView];
+    
+}
+
+- (void)pushCommentViewToTop {
+    
+    HSAddCommentViewController *addCommentViewController = [[HSAddCommentViewController alloc] init];
+    
+    [HSUIUtils pushViewController:addCommentViewController ToNavigationController:self.navigationController withButtomToTopAnimation:YES];
     
 }
 
