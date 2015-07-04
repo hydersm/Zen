@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HSMainViewController.h"
+#import "HSStressData.h"
 
 @interface AppDelegate ()
 
@@ -26,6 +27,13 @@
     
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
+    
+    //Dummy Data
+    HSStressData *stressData = [HSStressData sharedInstance];
+    stressData.stress = @7;
+    stressData.heartRateContribution = @3;
+    stressData.gsrContribution = @12;
+    
     return YES;
     
 }
