@@ -14,6 +14,10 @@
 		3C2644A81B43C6A10011C8A8 /* ZenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2644A71B43C6A10011C8A8 /* ZenTests.m */; };
 		3C5245441B479BDE00708159 /* HSStressPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5245421B479BDE00708159 /* HSStressPageViewController.m */; };
 		3C5245451B479BDE00708159 /* HSStressPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C5245431B479BDE00708159 /* HSStressPageViewController.xib */; };
+		3C5245501B48756A00708159 /* HSTipsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C52454E1B48756A00708159 /* HSTipsTableViewCell.m */; };
+		3C5245511B48756A00708159 /* HSTipsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C52454F1B48756A00708159 /* HSTipsTableViewCell.xib */; };
+		3C5245541B487A2700708159 /* HSTipsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5245531B487A2700708159 /* HSTipsData.m */; };
+		3C5245571B48858D00708159 /* HSTipsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5245561B48858D00708159 /* HSTipsTableViewController.m */; };
 		3C88CD861B46FA7B002A7800 /* HSAddCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C88CD851B46FA7B002A7800 /* HSAddCommentViewController.m */; };
 		3C88CD8B1B47145F002A7800 /* HSUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C88CD8A1B47145F002A7800 /* HSUIUtils.m */; };
 		3C88CD931B479212002A7800 /* HSStressData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C88CD921B479212002A7800 /* HSStressData.m */; };
@@ -44,6 +48,13 @@
 		3C5245411B479BDE00708159 /* HSStressPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSStressPageViewController.h; sourceTree = "<group>"; };
 		3C5245421B479BDE00708159 /* HSStressPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSStressPageViewController.m; sourceTree = "<group>"; };
 		3C5245431B479BDE00708159 /* HSStressPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSStressPageViewController.xib; sourceTree = "<group>"; };
+		3C52454D1B48756A00708159 /* HSTipsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSTipsTableViewCell.h; sourceTree = "<group>"; };
+		3C52454E1B48756A00708159 /* HSTipsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSTipsTableViewCell.m; sourceTree = "<group>"; };
+		3C52454F1B48756A00708159 /* HSTipsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSTipsTableViewCell.xib; sourceTree = "<group>"; };
+		3C5245521B487A2700708159 /* HSTipsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSTipsData.h; sourceTree = "<group>"; };
+		3C5245531B487A2700708159 /* HSTipsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSTipsData.m; sourceTree = "<group>"; };
+		3C5245551B48858D00708159 /* HSTipsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSTipsTableViewController.h; sourceTree = "<group>"; };
+		3C5245561B48858D00708159 /* HSTipsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSTipsTableViewController.m; sourceTree = "<group>"; };
 		3C88CD841B46FA7B002A7800 /* HSAddCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSAddCommentViewController.h; sourceTree = "<group>"; };
 		3C88CD851B46FA7B002A7800 /* HSAddCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSAddCommentViewController.m; sourceTree = "<group>"; };
 		3C88CD891B47145F002A7800 /* HSUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSUIUtils.h; sourceTree = "<group>"; };
@@ -131,11 +142,55 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3C5245491B48747700708159 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				3C52454C1B48752800708159 /* Table View */,
+				3C52454B1B48751D00708159 /* PageView */,
+				3C9BA6831B4644C300DD0DF8 /* HSMainViewController.h */,
+				3C9BA6841B4644C300DD0DF8 /* HSMainViewController.m */,
+			);
+			name = "Main Screen";
+			sourceTree = "<group>";
+		};
+		3C52454A1B48749400708159 /* Add Comment Screen */ = {
+			isa = PBXGroup;
+			children = (
+				3C88CD841B46FA7B002A7800 /* HSAddCommentViewController.h */,
+				3C88CD851B46FA7B002A7800 /* HSAddCommentViewController.m */,
+			);
+			name = "Add Comment Screen";
+			sourceTree = "<group>";
+		};
+		3C52454B1B48751D00708159 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				3C5245411B479BDE00708159 /* HSStressPageViewController.h */,
+				3C5245421B479BDE00708159 /* HSStressPageViewController.m */,
+				3C5245431B479BDE00708159 /* HSStressPageViewController.xib */,
+			);
+			name = PageView;
+			sourceTree = "<group>";
+		};
+		3C52454C1B48752800708159 /* Table View */ = {
+			isa = PBXGroup;
+			children = (
+				3C52454D1B48756A00708159 /* HSTipsTableViewCell.h */,
+				3C52454E1B48756A00708159 /* HSTipsTableViewCell.m */,
+				3C52454F1B48756A00708159 /* HSTipsTableViewCell.xib */,
+				3C5245551B48858D00708159 /* HSTipsTableViewController.h */,
+				3C5245561B48858D00708159 /* HSTipsTableViewController.m */,
+			);
+			name = "Table View";
+			sourceTree = "<group>";
+		};
 		3C88CD941B479655002A7800 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				3C88CD911B479212002A7800 /* HSStressData.h */,
 				3C88CD921B479212002A7800 /* HSStressData.m */,
+				3C5245521B487A2700708159 /* HSTipsData.h */,
+				3C5245531B487A2700708159 /* HSTipsData.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -152,13 +207,8 @@
 		3C88CD961B479686002A7800 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3C9BA6831B4644C300DD0DF8 /* HSMainViewController.h */,
-				3C9BA6841B4644C300DD0DF8 /* HSMainViewController.m */,
-				3C88CD841B46FA7B002A7800 /* HSAddCommentViewController.h */,
-				3C88CD851B46FA7B002A7800 /* HSAddCommentViewController.m */,
-				3C5245411B479BDE00708159 /* HSStressPageViewController.h */,
-				3C5245421B479BDE00708159 /* HSStressPageViewController.m */,
-				3C5245431B479BDE00708159 /* HSStressPageViewController.xib */,
+				3C52454A1B48749400708159 /* Add Comment Screen */,
+				3C5245491B48747700708159 /* Main Screen */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -244,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C5245451B479BDE00708159 /* HSStressPageViewController.xib in Resources */,
+				3C5245511B48756A00708159 /* HSTipsTableViewCell.xib in Resources */,
 				3C2644991B43C6A10011C8A8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,10 +316,13 @@
 				3C26448E1B43C6A10011C8A8 /* AppDelegate.m in Sources */,
 				3C5245441B479BDE00708159 /* HSStressPageViewController.m in Sources */,
 				3C88CD931B479212002A7800 /* HSStressData.m in Sources */,
+				3C5245571B48858D00708159 /* HSTipsTableViewController.m in Sources */,
 				3C2644911B43C6A10011C8A8 /* Zen.xcdatamodeld in Sources */,
+				3C5245541B487A2700708159 /* HSTipsData.m in Sources */,
 				3C9BA6851B4644C300DD0DF8 /* HSMainViewController.m in Sources */,
 				3C88CD861B46FA7B002A7800 /* HSAddCommentViewController.m in Sources */,
 				3C88CD8B1B47145F002A7800 /* HSUIUtils.m in Sources */,
+				3C5245501B48756A00708159 /* HSTipsTableViewCell.m in Sources */,
 				3C26448B1B43C6A10011C8A8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

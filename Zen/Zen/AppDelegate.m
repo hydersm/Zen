@@ -24,6 +24,7 @@
     
     UIViewController *mainViewController = [[HSMainViewController alloc] init];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1];
     
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];

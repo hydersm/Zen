@@ -12,6 +12,7 @@
 #import "HSUIUtils.h"
 #import "HSStressPageViewController.h"
 #import "HSStressData.h"
+#import "HSTipsData.h"
 
 @interface HSMainViewController ()
 
@@ -55,16 +56,31 @@
         }
     }
     
+    //table view stuff
+    NSArray *tips = [NSArray arrayWithObjects:@"Go to the doctor.", @"Take a walk around the ring road", @"Play a video game.", @"Martin is an idiot.", @"poopy de poop poop", nil];
+    [[HSTipsData sharedInstance].tips addObjectsFromArray:tips];
+    
+    self.tableViewController = [[HSTipsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    [self addChildViewController:self.tableViewController];
+    [self.view addSubview:self.tableViewController.view];
+    [self.pageViewController didMoveToParentViewController:self];
+    
+    
 }
 
 //view has resized, add subviews here
 - (void)viewWillAppear:(BOOL)animated {
     
-    //page view stuff
+    //page view resizing
     float yOffset = self.navigationController.navigationBar.frame.size.height;
-    float yPadding = 10;
+    float padding = 10;
     
-    [[self.pageViewController view] setFrame:CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y + yOffset + yPadding, self.view.bounds.size.width, self.view.bounds.size.height/2.0 - (yOffset + yPadding))];
+    [[self.pageViewController view] setFrame:CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y + yOffset + padding, self.view.bounds.size.width, self.view.bounds.size.height/2.0 - (yOffset + padding))];
+    
+    //table view resizing
+    CGRect tableRect = CGRectMake(self.view.bounds.origin.x, self.pageViewController.view.frame.origin.y + self.pageViewController.view.frame.size.height + padding, self.view.bounds.size.width, self.view.bounds.size.height - (self.pageViewController.view.frame.origin.y + self.pageViewController.view.frame.size.height + padding));
+    
+    [self.tableViewController.view setFrame:tableRect];
     
 }
 

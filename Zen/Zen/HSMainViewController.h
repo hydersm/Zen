@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HSTipsTableViewController.h"
 
 @interface HSMainViewController : UIViewController <UIPageViewControllerDataSource>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
+@property (strong, nonatomic) HSTipsTableViewController *tableViewController;
 
 @end

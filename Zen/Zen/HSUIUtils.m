@@ -17,6 +17,7 @@
     tempViewController.view = [[UIView alloc] init];
     tempViewController.view.backgroundColor = [UIColor whiteColor];
     UINavigationController *tempNavigationController = [[UINavigationController alloc] initWithRootViewController:tempViewController];
+    tempNavigationController.navigationBar.tintColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1];
     
     [navigationController.view addSubview:tempNavigationController.view];
     
@@ -25,21 +26,19 @@
         CGRect oldFrame = tempNavigationController.view.frame;
         [tempNavigationController.view setFrame:CGRectMake(oldFrame.origin.x, oldFrame.origin.y + oldFrame.size.height, oldFrame.size.width, oldFrame.size.height)];
         
-        [UIView animateWithDuration:0.5
-                              delay:0.0
-                            options:UIViewAnimationOptionOverrideInheritedOptions &UIViewAnimationOptionCurveEaseIn
-                         animations:^{
-                             [tempNavigationController.view setFrame:oldFrame];
-                         } completion: ^(BOOL finished){
-                             
-                             if(finished) {
-                                 
-                                 [navigationController pushViewController:viewController animated:NO];
-                                 [tempNavigationController.view removeFromSuperview];
-                                 
-                             }
-                             
-                         }];
+        [UIView animateWithDuration:0.75 delay:0 usingSpringWithDamping:1.0 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            
+            [tempNavigationController.view setFrame:oldFrame];
+            
+        } completion:^(BOOL finished) {
+            
+            if(finished) {
+                [navigationController pushViewController:viewController animated:NO];
+                [tempNavigationController.view removeFromSuperview];
+            }
+            
+        }];
+        
         
     }
     
@@ -53,6 +52,7 @@
     tempViewController.view = [[UIView alloc] init];
     tempViewController.view.backgroundColor = [UIColor whiteColor];
     UINavigationController *tempNavigationController = [[UINavigationController alloc] initWithRootViewController:tempViewController];
+    tempNavigationController.navigationBar.tintColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1];
     
     [navigationController.view addSubview:tempNavigationController.view];
     
@@ -62,13 +62,15 @@
         
         CGRect oldFrame = tempNavigationController.view.frame;
         
-        [UIView animateWithDuration:0.5
-                              delay:0.0
-                            options:UIViewAnimationOptionOverrideInheritedOptions &UIViewAnimationOptionCurveEaseIn
+        [UIView animateWithDuration:0.75
+                              delay:0
+             usingSpringWithDamping:1.0
+              initialSpringVelocity:0
+                            options:UIViewAnimationOptionCurveEaseIn
                          animations:^{
                              [tempNavigationController.view setFrame:CGRectMake(oldFrame.origin.x, oldFrame.origin.y + oldFrame.size.height, oldFrame.size.width, oldFrame.size.height)];
                          }
-                         completion: ^(BOOL finished){
+                         completion:^(BOOL finished){
                              if(finished) {
                                  
                                  [tempNavigationController.view removeFromSuperview];
