@@ -12,6 +12,7 @@
 		3C2644911B43C6A10011C8A8 /* Zen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448F1B43C6A10011C8A8 /* Zen.xcdatamodeld */; };
 		3C2644991B43C6A10011C8A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2644981B43C6A10011C8A8 /* Images.xcassets */; };
 		3C2644A81B43C6A10011C8A8 /* ZenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2644A71B43C6A10011C8A8 /* ZenTests.m */; };
+		3C2805AE1B5314E4006786E3 /* HSAddCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2805AD1B5314E4006786E3 /* HSAddCommentViewController.xib */; };
 		3C5245441B479BDE00708159 /* HSStressPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5245421B479BDE00708159 /* HSStressPageViewController.m */; };
 		3C5245451B479BDE00708159 /* HSStressPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C5245431B479BDE00708159 /* HSStressPageViewController.xib */; };
 		3C5245501B48756A00708159 /* HSTipsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C52454E1B48756A00708159 /* HSTipsTableViewCell.m */; };
@@ -45,6 +46,7 @@
 		3C2644A11B43C6A10011C8A8 /* ZenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2644A61B43C6A10011C8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C2644A71B43C6A10011C8A8 /* ZenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZenTests.m; sourceTree = "<group>"; };
+		3C2805AD1B5314E4006786E3 /* HSAddCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSAddCommentViewController.xib; sourceTree = "<group>"; };
 		3C5245411B479BDE00708159 /* HSStressPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSStressPageViewController.h; sourceTree = "<group>"; };
 		3C5245421B479BDE00708159 /* HSStressPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSStressPageViewController.m; sourceTree = "<group>"; };
 		3C5245431B479BDE00708159 /* HSStressPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSStressPageViewController.xib; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				3C88CD841B46FA7B002A7800 /* HSAddCommentViewController.h */,
 				3C88CD851B46FA7B002A7800 /* HSAddCommentViewController.m */,
+				3C2805AD1B5314E4006786E3 /* HSAddCommentViewController.xib */,
 			);
 			name = "Add Comment Screen";
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C5245451B479BDE00708159 /* HSStressPageViewController.xib in Resources */,
+				3C2805AE1B5314E4006786E3 /* HSAddCommentViewController.xib in Resources */,
 				3C5245511B48756A00708159 /* HSTipsTableViewCell.xib in Resources */,
 				3C2644991B43C6A10011C8A8 /* Images.xcassets in Resources */,
 			);

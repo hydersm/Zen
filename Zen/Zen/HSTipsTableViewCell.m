@@ -20,8 +20,8 @@
 }
 
 - (void)awakeFromNib {
-    self.containerView.layer.borderColor = [UIColor grayColor].CGColor;
-    self.containerView.layer.borderWidth = 1.5;
+    self.containerView.layer.borderColor = [UIColor colorWithRed:177/255.0 green:177/255.0 blue:177/255.0 alpha:1.0].CGColor;
+    self.containerView.layer.borderWidth = 1;
     self.containerView.layer.cornerRadius = 5.0;
     self.containerView.layer.masksToBounds = YES;
     
