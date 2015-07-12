@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *tipLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
+@property (strong, nonatomic) IBOutlet UIView *containerView;
 
 @property (assign, nonatomic) NSString *tip;
 

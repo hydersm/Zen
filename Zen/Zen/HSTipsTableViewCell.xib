@@ -14,31 +14,73 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixg-ZF-k3m" userLabel="Time">
-                        <rect key="frame" x="8" y="126" width="154" height="25.5"/>
-                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
-                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eL-Cp-YAK" userLabel="Tip">
-                        <rect key="frame" x="8" y="8" width="304" height="110"/>
-                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8FW-m7-FNn" userLabel="ContainerView">
+                        <rect key="frame" x="8" y="8" width="304" height="144"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixg-ZF-k3m" userLabel="Time">
+                                <rect key="frame" x="9" y="110" width="287" height="26"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="200" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eL-Cp-YAK" userLabel="Tip">
+                                <rect key="frame" x="9" y="8" width="287" height="94"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7eL-Cp-YAK" firstAttribute="leading" secondItem="8FW-m7-FNn" secondAttribute="leading" constant="9" id="1Hw-NQ-naG"/>
+                            <constraint firstItem="7eL-Cp-YAK" firstAttribute="leading" secondItem="8FW-m7-FNn" secondAttribute="leading" constant="9" id="61y-nx-2uG"/>
+                            <constraint firstAttribute="trailing" secondItem="7eL-Cp-YAK" secondAttribute="trailing" constant="8" id="ASW-id-I5n"/>
+                            <constraint firstItem="7eL-Cp-YAK" firstAttribute="top" secondItem="8FW-m7-FNn" secondAttribute="top" constant="8" id="FWI-kV-ZxU"/>
+                            <constraint firstItem="7eL-Cp-YAK" firstAttribute="top" secondItem="8FW-m7-FNn" secondAttribute="top" constant="8" id="M4C-AL-icW"/>
+                            <constraint firstItem="Ixg-ZF-k3m" firstAttribute="leading" secondItem="8FW-m7-FNn" secondAttribute="leading" constant="9" id="NIz-H1-k6p"/>
+                            <constraint firstItem="Ixg-ZF-k3m" firstAttribute="leading" secondItem="8FW-m7-FNn" secondAttribute="leading" constant="8" id="NK3-mW-6GP"/>
+                            <constraint firstAttribute="trailing" secondItem="Ixg-ZF-k3m" secondAttribute="trailing" constant="8" id="Pad-j9-sva"/>
+                            <constraint firstAttribute="trailing" secondItem="Ixg-ZF-k3m" secondAttribute="trailing" constant="8" id="Rny-DY-QbT"/>
+                            <constraint firstItem="Ixg-ZF-k3m" firstAttribute="top" secondItem="7eL-Cp-YAK" secondAttribute="bottom" constant="8" id="TpM-hn-HHm"/>
+                            <constraint firstAttribute="trailing" secondItem="7eL-Cp-YAK" secondAttribute="trailing" constant="8" id="ba4-2f-WXB"/>
+                            <constraint firstItem="7eL-Cp-YAK" firstAttribute="leading" secondItem="8FW-m7-FNn" secondAttribute="leading" constant="8" id="c33-cN-uza"/>
+                            <constraint firstItem="Ixg-ZF-k3m" firstAttribute="top" secondItem="7eL-Cp-YAK" secondAttribute="bottom" constant="8" id="hYB-Ei-Cby"/>
+                            <constraint firstAttribute="bottom" secondItem="Ixg-ZF-k3m" secondAttribute="bottom" constant="8" id="iKU-RA-UaG"/>
+                            <constraint firstAttribute="bottom" secondItem="Ixg-ZF-k3m" secondAttribute="bottom" constant="8" id="rK6-X4-rc8"/>
+                            <constraint firstItem="Ixg-ZF-k3m" firstAttribute="top" secondItem="7eL-Cp-YAK" secondAttribute="bottom" constant="8" id="ukz-ub-kf8"/>
+                            <constraint firstAttribute="trailing" secondItem="7eL-Cp-YAK" secondAttribute="trailing" constant="8" id="vSw-ZG-GXR"/>
+                            <constraint firstItem="7eL-Cp-YAK" firstAttribute="top" secondItem="8FW-m7-FNn" secondAttribute="top" constant="8" id="w4M-6n-URR"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1Hw-NQ-naG"/>
+                                <exclude reference="ASW-id-I5n"/>
+                                <exclude reference="FWI-kV-ZxU"/>
+                                <exclude reference="c33-cN-uza"/>
+                                <exclude reference="vSw-ZG-GXR"/>
+                                <exclude reference="w4M-6n-URR"/>
+                                <exclude reference="NK3-mW-6GP"/>
+                                <exclude reference="Rny-DY-QbT"/>
+                                <exclude reference="TpM-hn-HHm"/>
+                                <exclude reference="iKU-RA-UaG"/>
+                                <exclude reference="ukz-ub-kf8"/>
+                            </mask>
+                        </variation>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="7eL-Cp-YAK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="2GO-Gx-7zY"/>
-                    <constraint firstItem="Ixg-ZF-k3m" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="N7r-ZD-uwh"/>
-                    <constraint firstItem="Ixg-ZF-k3m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="WCD-rh-wF1"/>
-                    <constraint firstItem="7eL-Cp-YAK" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Xhs-Kz-siC"/>
-                    <constraint firstItem="7eL-Cp-YAK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="wp3-Bu-1eI"/>
+                    <constraint firstItem="8FW-m7-FNn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="9hd-nY-0ms"/>
+                    <constraint firstItem="8FW-m7-FNn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Sc0-AW-4ye"/>
+                    <constraint firstItem="8FW-m7-FNn" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="UdI-Kc-Aos"/>
+                    <constraint firstItem="8FW-m7-FNn" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="uSd-DU-DqX"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="containerView" destination="8FW-m7-FNn" id="1NU-g5-CdI"/>
                 <outlet property="timeLabel" destination="Ixg-ZF-k3m" id="j4X-3l-u3W"/>
                 <outlet property="tipLabel" destination="7eL-Cp-YAK" id="oS6-j2-SBd"/>
             </connections>
+            <point key="canvasLocation" x="457" y="399"/>
         </tableViewCell>
     </objects>
 </document>

@@ -32,10 +32,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    UILabel *tempView = [[UILabel alloc] initWithFrame:self.view.bounds];
-    tempView.text = @"add comment view";
-    tempView.textColor = [UIColor blackColor];
-    [self.view addSubview:tempView];
+//    UILabel *tempView = [[UILabel alloc] initWithFrame:self.view.bounds];
+//    tempView.text = @"add comment view";
+//    tempView.textColor = [UIColor blackColor];
+//    [self.view addSubview:tempView];
+    
+    //***add graph here
     
 }
 
