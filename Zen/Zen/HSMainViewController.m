@@ -30,7 +30,7 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"Zen";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(pushSettingsViewToTop)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushCommentViewToTop)];
     
     //page view stuff
@@ -89,6 +89,14 @@
     HSAddCommentViewController *addCommentViewController = [[HSAddCommentViewController alloc] init];
     
     [HSUIUtils pushViewController:addCommentViewController ToNavigationController:self.navigationController withButtomToTopAnimation:YES];
+    
+}
+
+- (void)pushSettingsViewToTop {
+    
+    HSSettingsViewController *settingsViewController = [[HSSettingsViewController alloc] init];
+    
+    [HSUIUtils pushViewController:settingsViewController ToNavigationController:self.navigationController withButtomToTopAnimation:YES];
     
 }
 

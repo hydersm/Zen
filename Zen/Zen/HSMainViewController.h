@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HSTipsTableViewController.h"
+#import "HSSettingsViewController.h"
 
 @interface HSMainViewController : UIViewController <UIPageViewControllerDataSource>
 
