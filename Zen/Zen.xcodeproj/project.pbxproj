@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C0A25241B53847E0060D7FD /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A251F1B53847E0060D7FD /* JBBarChartView.m */; };
+		3C0A25251B53847E0060D7FD /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A25211B53847E0060D7FD /* JBChartView.m */; };
+		3C0A25261B53847E0060D7FD /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A25231B53847E0060D7FD /* JBLineChartView.m */; };
+		3C0A25291B538E220060D7FD /* JBLineChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A25281B538E220060D7FD /* JBLineChartFooterView.m */; };
 		3C26448B1B43C6A10011C8A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448A1B43C6A10011C8A8 /* main.m */; };
 		3C26448E1B43C6A10011C8A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448D1B43C6A10011C8A8 /* AppDelegate.m */; };
 		3C2644911B43C6A10011C8A8 /* Zen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448F1B43C6A10011C8A8 /* Zen.xcdatamodeld */; };
@@ -36,6 +40,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C0A251E1B53847E0060D7FD /* JBBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarChartView.h; sourceTree = "<group>"; };
+		3C0A251F1B53847E0060D7FD /* JBBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarChartView.m; sourceTree = "<group>"; };
+		3C0A25201B53847E0060D7FD /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
+		3C0A25211B53847E0060D7FD /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
+		3C0A25221B53847E0060D7FD /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
+		3C0A25231B53847E0060D7FD /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
+		3C0A25271B538E220060D7FD /* JBLineChartFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartFooterView.h; sourceTree = "<group>"; };
+		3C0A25281B538E220060D7FD /* JBLineChartFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartFooterView.m; sourceTree = "<group>"; };
+		3C0A252F1B538F510060D7FD /* JBColorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBColorConstants.h; sourceTree = "<group>"; };
+		3C0A25301B538F510060D7FD /* JBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBConstants.h; sourceTree = "<group>"; };
+		3C0A25311B538F510060D7FD /* JBFontConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBFontConstants.h; sourceTree = "<group>"; };
+		3C0A25321B538F510060D7FD /* JBStringConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBStringConstants.h; sourceTree = "<group>"; };
+		3C0A25331B538F510060D7FD /* JBUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBUIConstants.h; sourceTree = "<group>"; };
 		3C2644851B43C6A10011C8A8 /* Zen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2644891B43C6A10011C8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C26448A1B43C6A10011C8A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +102,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C0A251D1B53847E0060D7FD /* JawBone */ = {
+			isa = PBXGroup;
+			children = (
+				3C0A25341B538F550060D7FD /* Constants */,
+				3C0A25271B538E220060D7FD /* JBLineChartFooterView.h */,
+				3C0A25281B538E220060D7FD /* JBLineChartFooterView.m */,
+				3C0A251E1B53847E0060D7FD /* JBBarChartView.h */,
+				3C0A251F1B53847E0060D7FD /* JBBarChartView.m */,
+				3C0A25201B53847E0060D7FD /* JBChartView.h */,
+				3C0A25211B53847E0060D7FD /* JBChartView.m */,
+				3C0A25221B53847E0060D7FD /* JBLineChartView.h */,
+				3C0A25231B53847E0060D7FD /* JBLineChartView.m */,
+			);
+			path = JawBone;
+			sourceTree = "<group>";
+		};
+		3C0A25341B538F550060D7FD /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				3C0A252F1B538F510060D7FD /* JBColorConstants.h */,
+				3C0A25301B538F510060D7FD /* JBConstants.h */,
+				3C0A25311B538F510060D7FD /* JBFontConstants.h */,
+				3C0A25321B538F510060D7FD /* JBStringConstants.h */,
+				3C0A25331B538F510060D7FD /* JBUIConstants.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		3C26447C1B43C6A10011C8A8 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +151,7 @@
 		3C2644871B43C6A10011C8A8 /* Zen */ = {
 			isa = PBXGroup;
 			children = (
+				3C0A251D1B53847E0060D7FD /* JawBone */,
 				3C88CD961B479686002A7800 /* View Controllers */,
 				3C88CD951B479667002A7800 /* Utilities */,
 				3C88CD941B479655002A7800 /* Data */,
@@ -322,10 +368,14 @@
 				3C88CD931B479212002A7800 /* HSStressData.m in Sources */,
 				3C5245571B48858D00708159 /* HSTipsTableViewController.m in Sources */,
 				3C2644911B43C6A10011C8A8 /* Zen.xcdatamodeld in Sources */,
+				3C0A25291B538E220060D7FD /* JBLineChartFooterView.m in Sources */,
+				3C0A25251B53847E0060D7FD /* JBChartView.m in Sources */,
 				3C5245541B487A2700708159 /* HSTipsData.m in Sources */,
 				3C9BA6851B4644C300DD0DF8 /* HSMainViewController.m in Sources */,
 				3C88CD861B46FA7B002A7800 /* HSAddCommentViewController.m in Sources */,
+				3C0A25261B53847E0060D7FD /* JBLineChartView.m in Sources */,
 				3C88CD8B1B47145F002A7800 /* HSUIUtils.m in Sources */,
+				3C0A25241B53847E0060D7FD /* JBBarChartView.m in Sources */,
 				3C5245501B48756A00708159 /* HSTipsTableViewCell.m in Sources */,
 				3C26448B1B43C6A10011C8A8 /* main.m in Sources */,
 			);

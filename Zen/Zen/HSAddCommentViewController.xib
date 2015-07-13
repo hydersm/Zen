@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HSAddCommentViewController">
             <connections>
+                <outlet property="stressLineChartPlaceholder" destination="lg5-pY-wih" id="y4c-Hn-dbF"/>
                 <outlet property="submitButton" destination="dw1-E9-IZw" id="D08-NM-hEi"/>
                 <outlet property="view" destination="2jl-dA-sNQ" id="xht-bp-Vfs"/>
                 <outletCollection property="question1ButtonCollection" destination="xuf-cY-zpE" collectionClass="NSMutableArray" id="xa0-tf-YRp"/>

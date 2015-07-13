@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JBLineChartView.h"
 
-@interface HSAddCommentViewController : UIViewController
+@interface HSAddCommentViewController : UIViewController<JBLineChartViewDataSource, JBLineChartViewDelegate>
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *question1ButtonCollection;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *question2ButtonCollection;
 @property (strong, nonatomic) IBOutlet UIButton *submitButton;
+@property (strong, nonatomic) IBOutlet UIView *stressLineChartPlaceholder;
+@property (strong, nonatomic) JBLineChartView *stressLineChartView;
 
 - (IBAction)question1ButtonPressed:(id)sender;
 - (IBAction)question2ButtonPressed:(id)sender;
