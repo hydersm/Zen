@@ -18,6 +18,9 @@
     tempViewController.view.backgroundColor = [UIColor whiteColor];
     UINavigationController *tempNavigationController = [[UINavigationController alloc] initWithRootViewController:tempViewController];
     tempNavigationController.navigationBar.tintColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1];
+    tempNavigationController.navigationBar.barTintColor = [UIColor colorWithRed:135/255.0 green:190/255.0 blue:115/255.0 alpha:1.0];
+    tempNavigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
     
     [navigationController.view addSubview:tempNavigationController.view];
     
@@ -53,6 +56,8 @@
     tempViewController.view.backgroundColor = [UIColor whiteColor];
     UINavigationController *tempNavigationController = [[UINavigationController alloc] initWithRootViewController:tempViewController];
     tempNavigationController.navigationBar.tintColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1];
+    tempNavigationController.navigationBar.barTintColor = [UIColor colorWithRed:135/255.0 green:190/255.0 blue:115/255.0 alpha:1.0];
+    tempNavigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     [navigationController.view addSubview:tempNavigationController.view];
     
@@ -79,6 +84,31 @@
         
     }
     
+}
+
++ (void)setUpButton:(UIButton *) button {
+    
+    button.layer.borderWidth = 1.0;
+    button.layer.borderColor = [UIColor colorWithRed:177/255.0 green:177/255.0 blue:177/255.0 alpha:1.0].CGColor;
+    button.layer.cornerRadius = 5.0;
+    button.layer.masksToBounds = YES;
+    [button setBackgroundImage:[self imageWithColor:[UIColor colorWithRed:135/255.0 green:190/255.0 blue:115/255.0 alpha:1.0]] forState:UIControlStateSelected];
+    
+}
+
++ (UIImage *)imageWithColor:(UIColor *)color
+{
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
 @end

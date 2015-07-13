@@ -12,7 +12,8 @@
 @interface HSUIUtils : NSObject
 
 + (void)pushViewController:(UIViewController *)viewController ToNavigationController:(UINavigationController *) navigationController withButtomToTopAnimation:(BOOL)flag;
-
 + (void)popViewControllerFromNavigationController:(UINavigationController *) navigationController withTopToBottomAnimation:(BOOL)flag;
++ (void)setUpButton:(UIButton *) button;
++ (UIImage *)imageWithColor:(UIColor *)color;
 
 @end

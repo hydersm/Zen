@@ -15,27 +15,64 @@
 
 @implementation HSAddCommentViewController
 
-- (void)loadView {
+- (id)init {
     
-    self.view = [[UIView alloc] init];
-    self.view.backgroundColor = [UIColor whiteColor];
+    return [super initWithNibName:@"HSAddCommentViewController" bundle:nil];
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    ((UIScrollView *)self.view).contentSize = self.view.frame.size;
     self.navigationItem.title = @"Add Comment";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(cancelButtonPressed)];
+    
+    for (UIButton *button in self.question1ButtonCollection) {
+        
+        [HSUIUtils setUpButton:button];
+        
+    }
+    
+    for (UIButton *button in self.question2ButtonCollection) {
+        
+        [HSUIUtils setUpButton:button];
+        
+    }
+    
+    [HSUIUtils setUpButton:self.submitButton];
+    
+}
+
+- (IBAction)question1ButtonPressed:(id)sender {
+    
+    for(UIButton *button in self.question1ButtonCollection) {
+        button.selected = NO;
+    }
+    
+    ((UIButton *) sender).selected = YES;
+    
+    
+}
+
+- (IBAction)question2ButtonPressed:(id)sender {
+    
+    for(UIButton *button in self.question2ButtonCollection) {
+        button.selected = NO;
+    }
+    
+    ((UIButton *) sender).selected = YES;
+    
+}
+
+- (IBAction)submitButtonPressed:(id)sender {
+    
+    //TODO:Actually Submit
+    [self cancelButtonPressed];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
-//    UILabel *tempView = [[UILabel alloc] initWithFrame:self.view.bounds];
-//    tempView.text = @"add comment view";
-//    tempView.textColor = [UIColor blackColor];
-//    [self.view addSubview:tempView];
     
     //***add graph here
     

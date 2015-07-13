@@ -10,4 +10,12 @@
 
 @interface HSAddCommentViewController : UIViewController
 
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *question1ButtonCollection;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *question2ButtonCollection;
+@property (strong, nonatomic) IBOutlet UIButton *submitButton;
+
+- (IBAction)question1ButtonPressed:(id)sender;
+- (IBAction)question2ButtonPressed:(id)sender;
+- (IBAction)submitButtonPressed:(id)sender;
+
 @end
