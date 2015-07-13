@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "JBLineChartView.h"
+#import "JBChartTooltipView.h"
+#import "JBConstants.h"
 
 @interface HSAddCommentViewController : UIViewController<JBLineChartViewDataSource, JBLineChartViewDelegate>
 

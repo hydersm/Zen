@@ -11,6 +11,7 @@
 		3C0A25251B53847E0060D7FD /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A25211B53847E0060D7FD /* JBChartView.m */; };
 		3C0A25261B53847E0060D7FD /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A25231B53847E0060D7FD /* JBLineChartView.m */; };
 		3C0A25291B538E220060D7FD /* JBLineChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A25281B538E220060D7FD /* JBLineChartFooterView.m */; };
+		3C0A25381B5396BE0060D7FD /* JBChartTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A25371B5396BE0060D7FD /* JBChartTooltipView.m */; };
 		3C26448B1B43C6A10011C8A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448A1B43C6A10011C8A8 /* main.m */; };
 		3C26448E1B43C6A10011C8A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448D1B43C6A10011C8A8 /* AppDelegate.m */; };
 		3C2644911B43C6A10011C8A8 /* Zen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448F1B43C6A10011C8A8 /* Zen.xcdatamodeld */; };
@@ -53,6 +54,8 @@
 		3C0A25311B538F510060D7FD /* JBFontConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBFontConstants.h; sourceTree = "<group>"; };
 		3C0A25321B538F510060D7FD /* JBStringConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBStringConstants.h; sourceTree = "<group>"; };
 		3C0A25331B538F510060D7FD /* JBUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBUIConstants.h; sourceTree = "<group>"; };
+		3C0A25361B5396BE0060D7FD /* JBChartTooltipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartTooltipView.h; sourceTree = "<group>"; };
+		3C0A25371B5396BE0060D7FD /* JBChartTooltipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartTooltipView.m; sourceTree = "<group>"; };
 		3C2644851B43C6A10011C8A8 /* Zen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2644891B43C6A10011C8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C26448A1B43C6A10011C8A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		3C0A251D1B53847E0060D7FD /* JawBone */ = {
 			isa = PBXGroup;
 			children = (
+				3C0A25351B5396B50060D7FD /* Misc */,
 				3C0A25341B538F550060D7FD /* Constants */,
 				3C0A25271B538E220060D7FD /* JBLineChartFooterView.h */,
 				3C0A25281B538E220060D7FD /* JBLineChartFooterView.m */,
@@ -128,6 +132,15 @@
 				3C0A25331B538F510060D7FD /* JBUIConstants.h */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		3C0A25351B5396B50060D7FD /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				3C0A25361B5396BE0060D7FD /* JBChartTooltipView.h */,
+				3C0A25371B5396BE0060D7FD /* JBChartTooltipView.m */,
+			);
+			name = Misc;
 			sourceTree = "<group>";
 		};
 		3C26447C1B43C6A10011C8A8 = {
@@ -366,6 +379,7 @@
 				3C26448E1B43C6A10011C8A8 /* AppDelegate.m in Sources */,
 				3C5245441B479BDE00708159 /* HSStressPageViewController.m in Sources */,
 				3C88CD931B479212002A7800 /* HSStressData.m in Sources */,
+				3C0A25381B5396BE0060D7FD /* JBChartTooltipView.m in Sources */,
 				3C5245571B48858D00708159 /* HSTipsTableViewController.m in Sources */,
 				3C2644911B43C6A10011C8A8 /* Zen.xcdatamodeld in Sources */,
 				3C0A25291B538E220060D7FD /* JBLineChartFooterView.m in Sources */,

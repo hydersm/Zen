@@ -21,6 +21,9 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
 
 @interface HSAddCommentViewController ()
 
+@property NSMutableArray *tempStressLineVals;
+@property JBChartTooltipView *tooltipView;
+
 @end
 
 @implementation HSAddCommentViewController
@@ -69,11 +72,21 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
     [self.stressLineChartView setMaximumValue:13];
     [self.stressLineChartView setMinimumValue:0];
     
-    self.stressLineChartView.showsLineSelection = NO;
-    self.stressLineChartView.showsVerticalSelection = NO;
+//    self.stressLineChartView.showsLineSelection = NO;
+//    self.stressLineChartView.showsVerticalSelection = NO;
     
     [self.stressLineChartPlaceholder.superview addSubview:self.stressLineChartView];
     [self.stressLineChartPlaceholder removeFromSuperview];
+    
+    //set data
+    self.tempStressLineVals = [[NSMutableArray alloc] init];
+    for(int i = 0; i < 7; i++) {
+        
+        [self.tempStressLineVals addObject:[NSNumber numberWithInteger:arc4random_uniform(11)]];
+        
+    }
+    
+    
     [self.stressLineChartView reloadData];
     
     
@@ -135,8 +148,8 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
 
 - (CGFloat)lineChartView:(JBLineChartView *)lineChartView verticalValueForHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex {
     
-    return arc4random_uniform(11);
-    
+    NSNumber *num = self.tempStressLineVals[horizontalIndex];
+    return [num floatValue];
 }
 
 - (UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForLineAtLineIndex:(NSUInteger)lineIndex {
@@ -149,6 +162,95 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
 
 - (CGFloat)lineChartView:(JBLineChartView *)lineChartView widthForLineAtLineIndex:(NSUInteger)lineIndex {
     return 0.5f;
+}
+
+- (UIColor *)lineChartView:(JBLineChartView *)lineChartView verticalSelectionColorForLineAtLineIndex:(NSUInteger)lineIndex
+{
+    return [UIColor colorWithRed:135/255.0 green:190/255.0 blue:115/255.0 alpha:1.0]; // color of selection view
+}
+
+- (CGFloat)verticalSelectionWidthForLineChartView:(JBLineChartView *)lineChartView
+{
+    return 20; // width of selection view
+}
+
+- (UIColor *)lineChartView:(JBLineChartView *)lineChartView selectionColorForLineAtLineIndex:(NSUInteger)lineIndex
+{
+    return [UIColor colorWithRed:252/255.0 green:104/255.0 blue:44/255.0 alpha:1.0]; // color of selected line
+}
+
+- (UIColor *)lineChartView:(JBLineChartView *)lineChartView selectionFillColorForLineAtLineIndex:(NSUInteger)lineIndex
+{
+    return [UIColor colorWithRed:254/255.0 green:212/255.0 blue:202/255.0 alpha:1.0]; // color of area under selected line
+}
+
+- (void)lineChartView:(JBLineChartView *)lineChartView didSelectLineAtIndex:(NSUInteger)lineIndex horizontalIndex:(NSUInteger)horizontalIndex touchPoint:(CGPoint)touchPoint
+{
+    ((UIScrollView *)self.view).scrollEnabled = NO;
+    [self setTooltipVisible:YES animated:YES atTouchPoint:touchPoint];
+    NSNumber *num = self.tempStressLineVals[horizontalIndex];
+    [self.tooltipView setText:[num stringValue]];
+    ((UIScrollView *)self.view).scrollEnabled = YES;
+}
+
+#pragma mark tool tip
+
+- (void)setTooltipVisible:(BOOL)tooltipVisible animated:(BOOL)animated atTouchPoint:(CGPoint)touchPoint
+{
+    
+    if (!self.tooltipView)
+    {
+        self.tooltipView = [[JBChartTooltipView alloc] init];
+        self.tooltipView.alpha = 0.0;
+        [self.stressLineChartView.superview addSubview:self.tooltipView];
+    }
+    
+    [self.view bringSubviewToFront:self.tooltipView];
+    
+    dispatch_block_t adjustTooltipPosition = ^{
+        CGPoint originalTouchPoint = [self.view convertPoint:touchPoint fromView:self.stressLineChartView];
+        CGPoint convertedTouchPoint = originalTouchPoint; // modified
+        JBChartView *chartView = self.stressLineChartView;
+        if (chartView)
+        {
+            CGFloat minChartX = (chartView.frame.origin.x + ceil(self.tooltipView.frame.size.width * 0.5));
+            if (convertedTouchPoint.x < minChartX)
+            {
+                convertedTouchPoint.x = minChartX;
+            }
+            CGFloat maxChartX = (chartView.frame.origin.x + chartView.frame.size.width - ceil(self.tooltipView.frame.size.width * 0.5));
+            if (convertedTouchPoint.x > maxChartX)
+            {
+                convertedTouchPoint.x = maxChartX;
+            }
+            self.tooltipView.frame = CGRectMake(convertedTouchPoint.x - ceil(self.tooltipView.frame.size.width * 0.5), CGRectGetMaxY(chartView.headerView.frame) + 40, self.tooltipView.frame.size.width, self.tooltipView.frame.size.height);
+        }
+    };
+    
+    dispatch_block_t adjustTooltipVisibility = ^{
+        self.tooltipView.alpha = tooltipVisible ? 1.0 : 0.0;
+    };
+    
+    if (tooltipVisible)
+    {
+        adjustTooltipPosition();
+    }
+    
+    if (animated)
+    {
+        [UIView animateWithDuration:kJBChartViewDefaultAnimationDuration animations:^{
+            adjustTooltipVisibility();
+        } completion:^(BOOL finished) {
+            if (!tooltipVisible)
+            {
+                adjustTooltipPosition();
+            }
+        }];
+    }
+    else
+    {
+        adjustTooltipVisibility();
+    }
 }
 
 /*
