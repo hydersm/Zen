@@ -12,6 +12,7 @@
 		3C0A25261B53847E0060D7FD /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A25231B53847E0060D7FD /* JBLineChartView.m */; };
 		3C0A25291B538E220060D7FD /* JBLineChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A25281B538E220060D7FD /* JBLineChartFooterView.m */; };
 		3C0A25381B5396BE0060D7FD /* JBChartTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A25371B5396BE0060D7FD /* JBChartTooltipView.m */; };
+		3C0A253B1B539C4F0060D7FD /* JBChartTooltipTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A253A1B539C4F0060D7FD /* JBChartTooltipTipView.m */; };
 		3C26448B1B43C6A10011C8A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448A1B43C6A10011C8A8 /* main.m */; };
 		3C26448E1B43C6A10011C8A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448D1B43C6A10011C8A8 /* AppDelegate.m */; };
 		3C2644911B43C6A10011C8A8 /* Zen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448F1B43C6A10011C8A8 /* Zen.xcdatamodeld */; };
@@ -56,6 +57,8 @@
 		3C0A25331B538F510060D7FD /* JBUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBUIConstants.h; sourceTree = "<group>"; };
 		3C0A25361B5396BE0060D7FD /* JBChartTooltipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartTooltipView.h; sourceTree = "<group>"; };
 		3C0A25371B5396BE0060D7FD /* JBChartTooltipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartTooltipView.m; sourceTree = "<group>"; };
+		3C0A25391B539C4F0060D7FD /* JBChartTooltipTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartTooltipTipView.h; sourceTree = "<group>"; };
+		3C0A253A1B539C4F0060D7FD /* JBChartTooltipTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartTooltipTipView.m; sourceTree = "<group>"; };
 		3C2644851B43C6A10011C8A8 /* Zen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2644891B43C6A10011C8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C26448A1B43C6A10011C8A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 		3C0A25351B5396B50060D7FD /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				3C0A25391B539C4F0060D7FD /* JBChartTooltipTipView.h */,
+				3C0A253A1B539C4F0060D7FD /* JBChartTooltipTipView.m */,
 				3C0A25361B5396BE0060D7FD /* JBChartTooltipView.h */,
 				3C0A25371B5396BE0060D7FD /* JBChartTooltipView.m */,
 			);
@@ -392,6 +397,7 @@
 				3C0A25241B53847E0060D7FD /* JBBarChartView.m in Sources */,
 				3C5245501B48756A00708159 /* HSTipsTableViewCell.m in Sources */,
 				3C26448B1B43C6A10011C8A8 /* main.m in Sources */,
+				3C0A253B1B539C4F0060D7FD /* JBChartTooltipTipView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

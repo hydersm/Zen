@@ -23,6 +23,8 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
 
 @property NSMutableArray *tempStressLineVals;
 @property JBChartTooltipView *tooltipView;
+@property JBChartTooltipTipView *tooltipTipView;
+@property BOOL toolTipVisibleNow;
 
 @end
 
@@ -71,9 +73,6 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
     
     [self.stressLineChartView setMaximumValue:13];
     [self.stressLineChartView setMinimumValue:0];
-    
-//    self.stressLineChartView.showsLineSelection = NO;
-//    self.stressLineChartView.showsVerticalSelection = NO;
     
     [self.stressLineChartPlaceholder.superview addSubview:self.stressLineChartView];
     [self.stressLineChartPlaceholder removeFromSuperview];
@@ -190,6 +189,12 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
     [self setTooltipVisible:YES animated:YES atTouchPoint:touchPoint];
     NSNumber *num = self.tempStressLineVals[horizontalIndex];
     [self.tooltipView setText:[num stringValue]];
+    
+}
+
+- (void)didDeselectLineInLineChartView:(JBLineChartView *)lineChartView
+{
+    [self setTooltipVisible:NO animated:YES atTouchPoint:CGPointZero];
     ((UIScrollView *)self.view).scrollEnabled = YES;
 }
 
@@ -198,17 +203,35 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
 - (void)setTooltipVisible:(BOOL)tooltipVisible animated:(BOOL)animated atTouchPoint:(CGPoint)touchPoint
 {
     
+    self.toolTipVisibleNow = tooltipVisible;
+    JBChartView *chartView = self.stressLineChartView;
+    
+    if (!chartView)
+    {
+        return;
+    }
+    
     if (!self.tooltipView)
     {
         self.tooltipView = [[JBChartTooltipView alloc] init];
         self.tooltipView.alpha = 0.0;
-        [self.stressLineChartView.superview addSubview:self.tooltipView];
+        self.tooltipView.backgroundColor = [UIColor colorWithRed:135/255.0 green:190/255.0 blue:115/255.0 alpha:1];
+        [self.view addSubview:self.tooltipView];
     }
     
     [self.view bringSubviewToFront:self.tooltipView];
     
+    if (!self.tooltipTipView)
+    {
+        self.tooltipTipView = [[JBChartTooltipTipView alloc] init];
+        self.tooltipTipView.alpha = 0.0;
+        [self.view addSubview:self.tooltipTipView];
+    }
+    
+    [self.view bringSubviewToFront:self.tooltipTipView];
+    
     dispatch_block_t adjustTooltipPosition = ^{
-        CGPoint originalTouchPoint = [self.view convertPoint:touchPoint fromView:self.stressLineChartView];
+        CGPoint originalTouchPoint = [self.view convertPoint:touchPoint fromView:chartView];
         CGPoint convertedTouchPoint = originalTouchPoint; // modified
         JBChartView *chartView = self.stressLineChartView;
         if (chartView)
@@ -224,11 +247,24 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
                 convertedTouchPoint.x = maxChartX;
             }
             self.tooltipView.frame = CGRectMake(convertedTouchPoint.x - ceil(self.tooltipView.frame.size.width * 0.5), CGRectGetMaxY(chartView.headerView.frame) + 40, self.tooltipView.frame.size.width, self.tooltipView.frame.size.height);
+            
+            CGFloat minTipX = (chartView.frame.origin.x + self.tooltipTipView.frame.size.width);
+            if (originalTouchPoint.x < minTipX)
+            {
+                originalTouchPoint.x = minTipX;
+            }
+            CGFloat maxTipX = (chartView.frame.origin.x + chartView.frame.size.width - self.tooltipTipView.frame.size.width);
+            if (originalTouchPoint.x > maxTipX)
+            {
+                originalTouchPoint.x = maxTipX;
+            }
+            self.tooltipTipView.frame = CGRectMake(originalTouchPoint.x - ceil(self.tooltipTipView.frame.size.width * 0.5), CGRectGetMaxY(self.tooltipView.frame), self.tooltipTipView.frame.size.width, self.tooltipTipView.frame.size.height);
         }
     };
     
     dispatch_block_t adjustTooltipVisibility = ^{
         self.tooltipView.alpha = tooltipVisible ? 1.0 : 0.0;
+        self.tooltipTipView.alpha = tooltipVisible ? 1.0 : 0.0;
     };
     
     if (tooltipVisible)
@@ -238,7 +274,7 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
     
     if (animated)
     {
-        [UIView animateWithDuration:kJBChartViewDefaultAnimationDuration animations:^{
+        [UIView animateWithDuration:0.25f animations:^{
             adjustTooltipVisibility();
         } completion:^(BOOL finished) {
             if (!tooltipVisible)
