@@ -132,25 +132,26 @@
     
     HSStressPageViewController *childViewController;
     HSStressData *stressData = [HSStressData sharedInstance];
+    HSStress *lastStress = [stressData.stressHistory lastObject];
     
     if(index == 0) {
         childViewController = [[HSStressPageViewController alloc] initWitLabel:@"Stress Score" nibName:@"HSStressPageViewController" bundle:nil];
         stressData.stressPageViewController = childViewController;
-        if(stressData.stress != nil) {
-            childViewController.numberString = stressData.stress;
+        if(lastStress.stress != nil) {
+            childViewController.numberString = lastStress.stress;
             childViewController.numberSecondaryLabelString = @"as of 5 minutes";
         }
     } else if (index == 1) {
         childViewController = [[HSStressPageViewController alloc] initWitLabel:@"Heart Rate" nibName:@"HSStressPageViewController" bundle:nil];
-        if(stressData.heartRate != nil) {
-            childViewController.numberString = stressData.heartRate;
+        if(lastStress.heartRate != nil) {
+            childViewController.numberString = lastStress.heartRate;
             childViewController.numberSecondaryLabelString = @"as of 5 minutes";
         }
         stressData.heartRatePageViewController = childViewController;
     } else if (index == 2) {
         childViewController = [[HSStressPageViewController alloc] initWitLabel:@"Galvanic Skin Response" nibName:@"HSStressPageViewController" bundle:nil];
-        if(stressData.gsr != nil) {
-            childViewController.numberString = stressData.gsr;
+        if(lastStress.gsr != nil) {
+            childViewController.numberString = lastStress.gsr;
             childViewController.numberSecondaryLabelString = @"as of 5 minutes";
         }
         stressData.gsrPageViewController = childViewController;

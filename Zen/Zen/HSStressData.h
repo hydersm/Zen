@@ -9,12 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "HSStressPageViewController.h"
+#import "HSStress.h"
 
 @interface HSStressData : NSObject
 
-@property (strong, nonatomic) NSString *stress;
-@property (strong, nonatomic) NSString *heartRate;
-@property (strong, nonatomic) NSString *gsr;
+@property (strong, nonatomic) NSMutableArray *stressHistory;
 
 @property (weak, nonatomic) HSStressPageViewController *stressPageViewController;
 @property (weak, nonatomic) HSStressPageViewController *heartRatePageViewController;

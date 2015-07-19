@@ -21,14 +21,24 @@
     if(_sharedInstance == nil) {
         _sharedInstance = [[HSStressData alloc] init];
         
-        _sharedInstance.stress = [[NSString alloc] init];
-        _sharedInstance.heartRate = [[NSString alloc] init];
-        _sharedInstance.gsr = [[NSString alloc] init];
+        _sharedInstance.stressHistory = [[NSMutableArray alloc] init];
         
         //connection stuff
+        NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyyMMddhhmmss"];
+        NSDate *now = [NSDate date];
+        NSDate *twoDaysAgo = [now dateByAddingTimeInterval:-2*24*60*60];
+        
         _sharedInstance.responseData = [[NSMutableData alloc] init];
+        
+        NSMutableString *url = [[NSMutableString alloc] init];
+        [url appendString:@"http://adipruthi.com/api/get_data.php?uid=hyder6&start="];
+        [url appendString:[dateFormatter stringFromDate:twoDaysAgo]];
+        [url appendString:@"&end="];
+        [url appendString:[dateFormatter stringFromDate:now]];
         NSURLRequest *request = [NSURLRequest requestWithURL:
-                                 [NSURL URLWithString:@"http://adipruthi.com/api/get_data.php?uid=tommy&start=20000101000000&end=20300101000000"]];
+                                 [NSURL URLWithString:url]];
+        
         [[NSURLConnection alloc] initWithRequest:request delegate:_sharedInstance];
         
     }
@@ -59,37 +69,48 @@
     
     // convert to JSON
     NSError *myError = nil;
-    NSArray *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
+    NSArray *resA = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
     
     // show all values
-    NSDictionary *first = res.lastObject;
-    for(id key in first) {
+    for(int i = 0; i < resA.count; i++) {
         
-        id value = [first objectForKey:key];
+        NSDictionary *resO = [resA objectAtIndex:i];
         
-        NSString *keyAsString = (NSString *)key;
-        NSString *valueAsString = (NSString *)value;
+        HSStress *stress = [[HSStress alloc] init];
         
-        if([keyAsString isEqualToString:@"stress_score"]) {
-            self.stress = valueAsString;
-            if(self.stressPageViewController != nil) {
-                self.stressPageViewController.numberString = self.stress;
+        for(id key in resO) {
+            
+            id value = [resO objectForKey:key];
+            
+            NSString *keyAsString = (NSString *)key;
+            NSString *valueAsString = (NSString *)value;
+            
+            if([keyAsString isEqualToString:@"stress_score"]) {
+                stress.stress = valueAsString;
+            } else if ([keyAsString isEqualToString:@"bpm"]) {
+                stress.heartRate = valueAsString;
+            } else if ([keyAsString isEqualToString:@"gsr"]) {
+                stress.gsr = valueAsString;
+            } else if ([keyAsString isEqualToString:@"date_time"]) {
+                stress.date = valueAsString;
             }
-        } else if ([keyAsString isEqualToString:@"bpm"]) {
-            self.heartRate = valueAsString;
-            if(self.heartRatePageViewController != nil) {
-                self.heartRatePageViewController.numberString = self.heartRate;
-            }
-        } else if ([keyAsString isEqualToString:@"gsr"]) {
-            self.gsr = valueAsString;
-            if(self.gsrPageViewController != nil) {
-                self.gsrPageViewController.numberString = self.gsr;
-            }
+            
         }
         
-        
+        [self.stressHistory addObject:stress];
     }
     
+    HSStress *lastStress = [self.stressHistory lastObject];
+    if(self.stressPageViewController != nil)
+        self.stressPageViewController.numberString = lastStress.stress;
+    
+    if(self.heartRatePageViewController != nil)
+        self.heartRatePageViewController.numberString = lastStress.heartRate;
+    
+    if(self.gsrPageViewController != nil)
+        self.gsrPageViewController.numberString = lastStress.gsr;
+    
+    NSLog(@"Stop");
 }
 
 @end

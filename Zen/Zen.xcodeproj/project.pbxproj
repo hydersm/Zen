@@ -14,6 +14,7 @@
 		3C0A25381B5396BE0060D7FD /* JBChartTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A25371B5396BE0060D7FD /* JBChartTooltipView.m */; };
 		3C0A253B1B539C4F0060D7FD /* JBChartTooltipTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A253A1B539C4F0060D7FD /* JBChartTooltipTipView.m */; };
 		3C0A253F1B53A4940060D7FD /* HSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A253E1B53A4940060D7FD /* HSSettingsViewController.m */; };
+		3C131DA11B5B70D70052B208 /* HSStress.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C131DA01B5B70D70052B208 /* HSStress.m */; };
 		3C26448B1B43C6A10011C8A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448A1B43C6A10011C8A8 /* main.m */; };
 		3C26448E1B43C6A10011C8A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448D1B43C6A10011C8A8 /* AppDelegate.m */; };
 		3C2644911B43C6A10011C8A8 /* Zen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C26448F1B43C6A10011C8A8 /* Zen.xcdatamodeld */; };
@@ -62,6 +63,8 @@
 		3C0A253A1B539C4F0060D7FD /* JBChartTooltipTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartTooltipTipView.m; sourceTree = "<group>"; };
 		3C0A253D1B53A4940060D7FD /* HSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSettingsViewController.h; sourceTree = "<group>"; };
 		3C0A253E1B53A4940060D7FD /* HSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSettingsViewController.m; sourceTree = "<group>"; };
+		3C131D9F1B5B70D70052B208 /* HSStress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSStress.h; sourceTree = "<group>"; };
+		3C131DA01B5B70D70052B208 /* HSStress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSStress.m; sourceTree = "<group>"; };
 		3C2644851B43C6A10011C8A8 /* Zen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2644891B43C6A10011C8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C26448A1B43C6A10011C8A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 		3C88CD941B479655002A7800 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3C131D9F1B5B70D70052B208 /* HSStress.h */,
+				3C131DA01B5B70D70052B208 /* HSStress.m */,
 				3C88CD911B479212002A7800 /* HSStressData.h */,
 				3C88CD921B479212002A7800 /* HSStressData.m */,
 				3C5245521B487A2700708159 /* HSTipsData.h */,
@@ -405,6 +410,7 @@
 				3C5245541B487A2700708159 /* HSTipsData.m in Sources */,
 				3C9BA6851B4644C300DD0DF8 /* HSMainViewController.m in Sources */,
 				3C88CD861B46FA7B002A7800 /* HSAddCommentViewController.m in Sources */,
+				3C131DA11B5B70D70052B208 /* HSStress.m in Sources */,
 				3C0A25261B53847E0060D7FD /* JBLineChartView.m in Sources */,
 				3C88CD8B1B47145F002A7800 /* HSUIUtils.m in Sources */,
 				3C0A25241B53847E0060D7FD /* JBBarChartView.m in Sources */,
