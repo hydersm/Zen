@@ -9,24 +9,19 @@
 #import "HSStressPageViewController.h"
 
 @interface HSStressPageViewController ()
-
 @end
 
 @implementation HSStressPageViewController
 
-- (id)initWithNumber:(NSNumber *)number label:(NSString *)label secondaryLabel:(NSString *)secondaryLabel nibName:(NSString *)nibName bundle:(NSBundle *) bundle {
+- (id)initWitLabel:(NSString *)label nibName:(NSString *)nibName bundle:(NSBundle *) bundle {
     
     self = [super initWithNibName:nibName bundle:bundle];
     
     if(self) {
         
         self.numberLabelString = label;
-        self.numberSecondaryLabelString = secondaryLabel;
-        
-        if([self.numberLabelString caseInsensitiveCompare:@"Stress Score"] == NSOrderedSame)
-            self.numberString = [NSString stringWithFormat:@"%@", number];
-        else
-            self.numberString = [NSString stringWithFormat:@"%@%%", number];
+        self.numberSecondaryLabelString = @"";
+        self.numberString = @"";
         
     }
     
@@ -49,6 +44,24 @@
     self.numberSecondaryLabelView.minimumScaleFactor = 0.5;
     
 }
+
+
+//setters
+- (void)setNumberString:(NSString *)numberString {
+    _numberString = numberString;
+    _numberView.text = self.numberString;
+}
+
+- (void)setNumberLabelString:(NSString *)numberLabelString {
+    _numberLabelString = numberLabelString;
+    _numberLabelView.text = self.numberLabelString;
+}
+
+- (void)setNumberSecondaryLabelString:(NSString *)numberSecondaryLabelString {
+    _numberSecondaryLabelString = numberSecondaryLabelString;
+    _numberSecondaryLabelView.text = self.numberSecondaryLabelString;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

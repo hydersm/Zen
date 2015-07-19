@@ -20,6 +20,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *numberLabelView;
 @property (strong, nonatomic) IBOutlet UILabel *numberSecondaryLabelView;
 
-- (id)initWithNumber:(NSNumber *)number label:(NSString *)label secondaryLabel:(NSString *)secondaryLabel nibName:(NSString *)nibName bundle:(NSBundle *) bundle;
+- (id)initWitLabel:(NSString *)label nibName:(NSString *)nibName bundle:(NSBundle *) bundle;
 
 @end
