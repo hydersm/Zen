@@ -7,18 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JBLineChartView.h"
-#import "JBChartTooltipView.h"
-#import "JBConstants.h"
-#import "JBChartTooltipTipView.h"
+#import "HSLineChartContainer.h"
 
-@interface HSAddCommentViewController : UIViewController<JBLineChartViewDataSource, JBLineChartViewDelegate>
+@interface HSAddCommentViewController : UIViewController
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *question1ButtonCollection;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *question2ButtonCollection;
 @property (strong, nonatomic) IBOutlet UIButton *submitButton;
 @property (strong, nonatomic) IBOutlet UIView *stressLineChartPlaceholder;
-@property (strong, nonatomic) JBLineChartView *stressLineChartView;
 
 - (IBAction)question1ButtonPressed:(id)sender;
 - (IBAction)question2ButtonPressed:(id)sender;

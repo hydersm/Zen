@@ -25,6 +25,12 @@
         
     }
     
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(dataUpdated)
+     name:@"HSDataUpdated"
+     object:nil];
+    
     return self;
     
 }
@@ -42,6 +48,11 @@
     self.numberLabelView.minimumScaleFactor = 0.5;
     self.numberSecondaryLabelView.adjustsFontSizeToFitWidth = YES;
     self.numberSecondaryLabelView.minimumScaleFactor = 0.5;
+    
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(handleSingleTap:)];
+    [self.view addGestureRecognizer:singleFingerTap];
     
 }
 
@@ -62,6 +73,24 @@
     _numberSecondaryLabelView.text = self.numberSecondaryLabelString;
 }
 
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
+    CGPoint location = [recognizer locationInView:[recognizer.view superview]];
+    
+    HSGraphViewController *graphViewController = [[HSGraphViewController alloc] init];
+    
+    [HSUIUtils pushViewController:graphViewController ToNavigationController:self.navController withButtomToTopAnimation:YES];
+}
+
+- (void)dataUpdated {
+    HSData *lastData = [[HSDataContainer sharedInstance].dataHistory lastObject];
+    if([self.numberLabelString isEqualToString:@"Stress Score"]) {
+        self.numberString = lastData.stress;
+    } else if ([self.numberLabelString isEqualToString:@"Heart Rate"]) {
+        self.numberString = lastData.heartRate;
+    } else if ([self.numberLabelString isEqualToString:@"Galvanic Skin Response"]) {
+        self.numberString = lastData.gsr;
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

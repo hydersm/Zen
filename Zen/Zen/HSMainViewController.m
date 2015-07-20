@@ -11,7 +11,7 @@
 #import "HSAddCommentViewController.h"
 #import "HSUIUtils.h"
 #import "HSStressPageViewController.h"
-#import "HSStressData.h"
+#import "HSDataContainer.h"
 #import "HSTipsData.h"
 
 @interface HSMainViewController ()
@@ -127,16 +127,14 @@
     return 0;
 }
 
-//page view helper HARDCODED
 - (HSStressPageViewController *)viewControllerAtIndex:(NSUInteger)index {
     
     HSStressPageViewController *childViewController;
-    HSStressData *stressData = [HSStressData sharedInstance];
-    HSStress *lastStress = [stressData.stressHistory lastObject];
+    HSDataContainer *stressData = [HSDataContainer sharedInstance];
+    HSData *lastStress = [stressData.dataHistory lastObject];
     
     if(index == 0) {
         childViewController = [[HSStressPageViewController alloc] initWitLabel:@"Stress Score" nibName:@"HSStressPageViewController" bundle:nil];
-        stressData.stressPageViewController = childViewController;
         if(lastStress.stress != nil) {
             childViewController.numberString = lastStress.stress;
             childViewController.numberSecondaryLabelString = @"as of 5 minutes";
@@ -147,14 +145,12 @@
             childViewController.numberString = lastStress.heartRate;
             childViewController.numberSecondaryLabelString = @"as of 5 minutes";
         }
-        stressData.heartRatePageViewController = childViewController;
     } else if (index == 2) {
         childViewController = [[HSStressPageViewController alloc] initWitLabel:@"Galvanic Skin Response" nibName:@"HSStressPageViewController" bundle:nil];
         if(lastStress.gsr != nil) {
             childViewController.numberString = lastStress.gsr;
             childViewController.numberSecondaryLabelString = @"as of 5 minutes";
         }
-        stressData.gsrPageViewController = childViewController;
     } else {
         
         childViewController = nil;
@@ -162,6 +158,7 @@
     }
     
     childViewController.index = index;
+    childViewController.navController = self.navigationController;
     
     return childViewController;
     

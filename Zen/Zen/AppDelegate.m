@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HSMainViewController.h"
-#import "HSStressData.h"
+#import "HSDataContainer.h"
 
 @interface AppDelegate ()
 

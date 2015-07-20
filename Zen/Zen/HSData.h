@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HSStress : NSObject
+@interface HSData : NSObject
 
 @property (strong, nonatomic) NSString *stress;
 @property (strong, nonatomic) NSString *heartRate;
+@property (strong, nonatomic) NSString *ibi;
 @property (strong, nonatomic) NSString *gsr;
 @property (strong, nonatomic) NSString *date;
 
