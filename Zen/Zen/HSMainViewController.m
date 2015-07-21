@@ -56,8 +56,6 @@
     }
     
     //table view stuff
-    NSArray *tips = [NSArray arrayWithObjects:@"Go to the doctor.", @"Take a walk around the ring road.", @"Play a video game.", @"Listen to a couple songs.", @"Ask the teacher to reduce some homework.", nil];
-    [[HSTipsData sharedInstance].tips addObjectsFromArray:tips];
     
     self.tableViewController = [[HSTipsTableViewController alloc] initWithStyle:UITableViewStylePlain];
     [self addChildViewController:self.tableViewController];

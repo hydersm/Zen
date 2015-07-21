@@ -262,7 +262,7 @@
 
 - (void)loadData {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    self.tips = [userDefaults objectForKey:@"HSTips"];
+    self.tips = [NSMutableArray arrayWithArray:[userDefaults objectForKey:@"HSTips"]];
     if(self.tips == nil) {
         self.tips = [[NSMutableArray alloc] init];
     }
@@ -277,10 +277,13 @@
     
     NSArray *tipsToAdd = ((self.tree[stress])[location])[activity];
     
-    for (NSString *tip in tipsToAdd) {
+    for (NSString *tipKey in tipsToAdd) {
+        NSString *tip = self.tipsDictionary[tipKey];
         if(![self.tips containsObject:tip])
             [self.tips addObject:tip];
     }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"HSTipsUpdated" object:nil userInfo:nil];
     
 }
 

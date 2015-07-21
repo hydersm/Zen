@@ -7,16 +7,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HSAddCommentViewController">
             <connections>
                 <outlet property="stressLineChartPlaceholder" destination="lg5-pY-wih" id="y4c-Hn-dbF"/>
+                <outlet property="stressSlider" destination="Ivu-D0-RGJ" id="0O9-yq-fBe"/>
                 <outlet property="submitButton" destination="dw1-E9-IZw" id="D08-NM-hEi"/>
                 <outlet property="view" destination="2jl-dA-sNQ" id="xht-bp-Vfs"/>
-                <outletCollection property="question1ButtonCollection" destination="xuf-cY-zpE" collectionClass="NSMutableArray" id="xa0-tf-YRp"/>
-                <outletCollection property="question1ButtonCollection" destination="SOe-LP-hRr" collectionClass="NSMutableArray" id="qBc-M1-gyk"/>
-                <outletCollection property="question1ButtonCollection" destination="1Gd-j8-WIn" collectionClass="NSMutableArray" id="yC9-WK-wrY"/>
-                <outletCollection property="question1ButtonCollection" destination="6Id-Il-KUQ" collectionClass="NSMutableArray" id="7hP-5O-PbL"/>
-                <outletCollection property="question1ButtonCollection" destination="YNl-CL-15U" collectionClass="NSMutableArray" id="avR-Ke-l6K"/>
-                <outletCollection property="question1ButtonCollection" destination="fYe-S9-b6H" collectionClass="NSMutableArray" id="jOl-gN-Ngx"/>
-                <outletCollection property="question1ButtonCollection" destination="yQx-71-V2L" collectionClass="NSMutableArray" id="MKe-bZ-nIt"/>
-                <outletCollection property="question1ButtonCollection" destination="Sbc-3N-WWN" collectionClass="NSMutableArray" id="1Ns-mN-8KG"/>
                 <outletCollection property="question2ButtonCollection" destination="cAG-Wq-AHa" collectionClass="NSMutableArray" id="6MN-iz-OmG"/>
                 <outletCollection property="question2ButtonCollection" destination="QMg-La-fAS" collectionClass="NSMutableArray" id="hlb-Jh-PwN"/>
                 <outletCollection property="question2ButtonCollection" destination="IBw-qk-kEX" collectionClass="NSMutableArray" id="4NV-SA-sor"/>
@@ -27,11 +20,22 @@
                 <outletCollection property="question2ButtonCollection" destination="X3E-BX-arV" collectionClass="NSMutableArray" id="XZj-eL-oqS"/>
                 <outletCollection property="question2ButtonCollection" destination="Nmo-nC-ABA" collectionClass="NSMutableArray" id="r4t-EH-wOD"/>
                 <outletCollection property="question2ButtonCollection" destination="fyw-JP-2c1" collectionClass="NSMutableArray" id="gJy-ou-hvG"/>
+                <outletCollection property="question2ButtonCollection" destination="2Sk-Yb-S3Y" collectionClass="NSMutableArray" id="8DJ-VZ-2XY"/>
+                <outletCollection property="question1ButtonCollection" destination="Sbc-3N-WWN" collectionClass="NSMutableArray" id="Wdb-kG-qsq"/>
+                <outletCollection property="question1ButtonCollection" destination="6Id-Il-KUQ" collectionClass="NSMutableArray" id="1WA-PF-btn"/>
+                <outletCollection property="question1ButtonCollection" destination="SOe-LP-hRr" collectionClass="NSMutableArray" id="KvP-TJ-lR5"/>
+                <outletCollection property="question1ButtonCollection" destination="xuf-cY-zpE" collectionClass="NSMutableArray" id="YF7-NS-xVF"/>
+                <outletCollection property="question1ButtonCollection" destination="fYe-S9-b6H" collectionClass="NSMutableArray" id="tRr-5W-ssS"/>
+                <outletCollection property="question1ButtonCollection" destination="1Gd-j8-WIn" collectionClass="NSMutableArray" id="V5G-fJ-IVZ"/>
+                <outletCollection property="question1ButtonCollection" destination="yQx-71-V2L" collectionClass="NSMutableArray" id="v3U-MD-KKD"/>
+                <outletCollection property="question1ButtonCollection" destination="YNl-CL-15U" collectionClass="NSMutableArray" id="10Y-j3-YXw"/>
+                <outletCollection property="question1ButtonCollection" destination="bws-XM-nhc" collectionClass="NSMutableArray" id="fwA-Qd-lmU"/>
+                <outletCollection property="question1ButtonCollection" destination="wIX-rO-TbD" collectionClass="NSMutableArray" id="LKC-v4-PzY"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="2jl-dA-sNQ">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="646"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="714"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stress Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttK-HJ-Buj" userLabel="GraphLabel">
@@ -44,7 +48,7 @@
                     <rect key="frame" x="8" y="53" width="304" height="144"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What are you doing?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jq-2V-6Fb" userLabel="Question1">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where are you?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jq-2V-6Fb" userLabel="Question1">
                     <rect key="frame" x="8" y="216" width="304" height="21"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,7 +58,7 @@
                     <rect key="frame" x="12" y="246" width="57" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Office">
+                    <state key="normal" title="office">
                         <color key="titleColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -66,7 +70,7 @@
                     <rect key="frame" x="77" y="246" width="87" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Classroom">
+                    <state key="normal" title="classroom">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -75,10 +79,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOe-LP-hRr" userLabel="Question1Button3">
-                    <rect key="frame" x="167" y="246" width="44" height="30"/>
+                    <rect key="frame" x="170" y="246" width="44" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Lab">
+                    <state key="normal" title="lab">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -87,10 +91,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuf-cY-zpE" userLabel="Question1Button4">
-                    <rect key="frame" x="219" y="246" width="86" height="30"/>
+                    <rect key="frame" x="12" y="284" width="86" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Restaurant">
+                    <state key="normal" title="restaurant">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -99,10 +103,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYe-S9-b6H" userLabel="Question1Button5">
-                    <rect key="frame" x="11" y="284" width="86" height="30"/>
+                    <rect key="frame" x="106" y="284" width="86" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Coffeshop">
+                    <state key="normal" title="coffeshop">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -111,10 +115,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Gd-j8-WIn" userLabel="Question1Button6">
-                    <rect key="frame" x="97" y="284" width="61" height="30"/>
+                    <rect key="frame" x="200" y="284" width="61" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Library">
+                    <state key="normal" title="library">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -123,10 +127,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQx-71-V2L" userLabel="Question1Button7">
-                    <rect key="frame" x="166" y="284" width="56" height="30"/>
+                    <rect key="frame" x="12" y="322" width="56" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Gym">
+                    <state key="normal" title="gym">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -135,10 +139,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNl-CL-15U" userLabel="Question1Button8">
-                    <rect key="frame" x="219" y="284" width="61" height="30"/>
+                    <rect key="frame" x="76" y="322" width="61" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Home">
+                    <state key="normal" title="home">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -146,11 +150,11 @@
                         <action selector="question1ButtonPressed:" destination="-1" eventType="touchUpInside" id="yHi-VC-3MA"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bws-XM-nhc" userLabel="Question1Button8">
-                    <rect key="frame" x="16" y="322" width="61" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bws-XM-nhc" userLabel="Question1Button9">
+                    <rect key="frame" x="145" y="322" width="69" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Outside">
+                    <state key="normal" title="outside">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -158,17 +162,29 @@
                         <action selector="question1ButtonPressed:" destination="-1" eventType="touchUpInside" id="kQC-oT-2W6"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where are you?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAp-TH-eGC" userLabel="Question2">
-                    <rect key="frame" x="8" y="369" width="304" height="21"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIX-rO-TbD" userLabel="Question1Button10">
+                    <rect key="frame" x="222" y="322" width="43" height="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="car">
+                        <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="question1ButtonPressed:" destination="-1" eventType="touchUpInside" id="L4g-CT-hkJ"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What are you doing?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAp-TH-eGC" userLabel="Question2">
+                    <rect key="frame" x="8" y="367" width="304" height="21"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAG-Wq-AHa" userLabel="Question2Button1">
-                    <rect key="frame" x="11" y="407" width="95" height="30"/>
+                    <rect key="frame" x="8" y="405" width="77" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Lecture hall">
+                    <state key="normal" title="working">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -177,10 +193,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMg-La-fAS" userLabel="Question2Button2">
-                    <rect key="frame" x="114" y="407" width="39" height="30"/>
+                    <rect key="frame" x="89" y="405" width="75" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Lab">
+                    <state key="normal" title="reading">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -189,10 +205,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBw-qk-kEX" userLabel="Question2Button3">
-                    <rect key="frame" x="167" y="407" width="61" height="30"/>
+                    <rect key="frame" x="180" y="405" width="96" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Office">
+                    <state key="normal" title="in a lecture">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -201,10 +217,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DJ-ei-JOc" userLabel="Question2Button4">
-                    <rect key="frame" x="11" y="445" width="44" height="30"/>
+                    <rect key="frame" x="9" y="442" width="100" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Mall">
+                    <state key="normal" title="in a meeting">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -213,10 +229,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gov-QR-3yj" userLabel="Question2Button5">
-                    <rect key="frame" x="63" y="445" width="65" height="30"/>
+                    <rect key="frame" x="117" y="442" width="55" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Transit">
+                    <state key="normal" title="eating">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -225,10 +241,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urp-bL-iYa" userLabel="Question2Button6">
-                    <rect key="frame" x="136" y="445" width="47" height="30"/>
+                    <rect key="frame" x="180" y="442" width="78" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Car">
+                    <state key="normal" title="studying">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -237,10 +253,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLR-P1-4SB" userLabel="Question2Button7">
-                    <rect key="frame" x="191" y="445" width="62" height="30"/>
+                    <rect key="frame" x="12" y="480" width="101" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Library">
+                    <state key="normal" title="working out">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -249,10 +265,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3E-BX-arV" userLabel="Question2Button8">
-                    <rect key="frame" x="12" y="482" width="77" height="30"/>
+                    <rect key="frame" x="117" y="480" width="61" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Bedroom">
+                    <state key="normal" title="sleep">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -261,10 +277,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmo-nC-ABA" userLabel="Question2Button9">
-                    <rect key="frame" x="97" y="482" width="77" height="30"/>
+                    <rect key="frame" x="185" y="480" width="69" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Kitchen">
+                    <state key="normal" title="gaming">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -273,10 +289,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyw-JP-2c1" userLabel="Question2Button10">
-                    <rect key="frame" x="182" y="482" width="56" height="30"/>
+                    <rect key="frame" x="12" y="518" width="70" height="30"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Gym">
+                    <state key="normal" title="walking">
                         <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -284,17 +300,53 @@
                         <action selector="question2ButtonPressed:" destination="-1" eventType="touchUpInside" id="Ys3-De-tUs"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1b-9r-r2O" userLabel="Question2Button10">
+                    <rect key="frame" x="0.0" y="613" width="25" height="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="0">
+                        <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="question2ButtonPressed:" destination="-1" eventType="touchUpInside" id="e7j-J2-ff1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWR-c0-JwL" userLabel="Question2Button10">
+                    <rect key="frame" x="290" y="613" width="30" height="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="3">
+                        <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="question2ButtonPressed:" destination="-1" eventType="touchUpInside" id="Cde-dY-Up8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sk-Yb-S3Y" userLabel="Question2Button10">
+                    <rect key="frame" x="89" y="518" width="106" height="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="hanging out">
+                        <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="question2ButtonPressed:" destination="-1" eventType="touchUpInside" id="euM-6a-2hV"/>
+                    </connections>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How stressed do you actually feel?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hts-j4-Xgf" userLabel="Question3">
-                    <rect key="frame" x="8" y="520" width="304" height="21"/>
+                    <rect key="frame" x="8" y="565" width="304" height="21"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <color key="textColor" red="0.31372549019607843" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ivu-D0-RGJ">
-                    <rect key="frame" x="6" y="549" width="308" height="31"/>
+                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.5" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ivu-D0-RGJ">
+                    <rect key="frame" x="6" y="594" width="308" height="31"/>
                 </slider>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dw1-E9-IZw" userLabel="SubmitButtom">
-                    <rect key="frame" x="231" y="587" width="81" height="39"/>
+                    <rect key="frame" x="120" y="655" width="81" height="39"/>
                     <color key="backgroundColor" red="0.52941176470588236" green="0.74509803921568629" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                     <state key="normal" title="Submit">
@@ -305,21 +357,9 @@
                         <action selector="submitButtonPressed:" destination="-1" eventType="touchUpInside" id="K57-k3-hhB"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIX-rO-TbD" userLabel="Question1Button8">
-                    <rect key="frame" x="85" y="322" width="43" height="30"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Car">
-                        <color key="titleColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="question1ButtonPressed:" destination="-1" eventType="touchUpInside" id="L4g-CT-hkJ"/>
-                    </connections>
-                </button>
             </subviews>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="1175" y="1115"/>
+            <point key="canvasLocation" x="1175" y="1149"/>
         </scrollView>
     </objects>
 </document>

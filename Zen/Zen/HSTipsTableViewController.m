@@ -23,7 +23,11 @@
     self.tableView.allowsSelection = NO;
     self.tableView.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
     
-    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(tipsUpdated)
+     name:@"HSTipsUpdated"
+     object:nil];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -47,6 +51,10 @@
 //        NSLog(@"Unhandled editing style");
 //    }
 //}
+
+- (void)tipsUpdated {
+    [self.tableView reloadData];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.

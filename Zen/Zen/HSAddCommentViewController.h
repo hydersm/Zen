@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "HSLineChartContainer.h"
+#import "HSTipsData.h"
+#import "HSDataContainer.h"
 
 @interface HSAddCommentViewController : UIViewController
 
@@ -15,6 +17,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *question2ButtonCollection;
 @property (strong, nonatomic) IBOutlet UIButton *submitButton;
 @property (strong, nonatomic) IBOutlet UIView *stressLineChartPlaceholder;
+@property (strong, nonatomic) IBOutlet UISlider *stressSlider;
 
 - (IBAction)question1ButtonPressed:(id)sender;
 - (IBAction)question2ButtonPressed:(id)sender;

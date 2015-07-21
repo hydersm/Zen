@@ -14,7 +14,7 @@
 
 + (HSTipsData *)sharedInstance;
 
-- (void)generateTips;
+- (void)generateTipsWithActualStress:(int)actualStress userStress:(double)userStress location:(NSString *)location activity:(NSString *)activity;
 - (void)saveData;
 - (void)loadData;
 

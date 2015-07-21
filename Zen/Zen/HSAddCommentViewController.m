@@ -12,6 +12,8 @@
 @interface HSAddCommentViewController ()
 
 @property HSLineChartContainer *lineChartContainer;
+@property UIButton *question1ActiveButton;
+@property UIButton *question2AcriveButton;
 
 @end
 
@@ -37,11 +39,13 @@
         [HSUIUtils setUpButton:button];
         
     }
+    [self question1ButtonPressed:(UIButton *)self.question1ButtonCollection[0]];
     for (UIButton *button in self.question2ButtonCollection) {
         
         [HSUIUtils setUpButton:button];
         
     }
+    [self question2ButtonPressed:(UIButton *)self.question2ButtonCollection[0]];
     
     //stress graph
     self.lineChartContainer = [[HSLineChartContainer alloc] initWithPlaceholderView:self.stressLineChartPlaceholder chartType:STRESS_CHART];
@@ -57,8 +61,8 @@
         button.selected = NO;
     }
     
-    ((UIButton *) sender).selected = YES;
-    
+    self.question1ActiveButton = sender;
+    self.question1ActiveButton.selected = YES;
     
 }
 
@@ -68,13 +72,16 @@
         button.selected = NO;
     }
     
-    ((UIButton *) sender).selected = YES;
+    self.question2AcriveButton = sender;
+    self.question2AcriveButton.selected = YES;
     
 }
 
 - (IBAction)submitButtonPressed:(id)sender {
     
     //TODO:Implement Submit
+    HSData *lastData = [[HSDataContainer sharedInstance].dataHistory lastObject];
+    [[HSTipsData sharedInstance] generateTipsWithActualStress:lastData.stress.intValue userStress:self.stressSlider.value location:self.question1ActiveButton.currentTitle activity:self.question2AcriveButton.currentTitle];
     [self cancelButtonPressed];
     
 }
