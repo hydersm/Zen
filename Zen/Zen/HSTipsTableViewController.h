@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWTableViewCell.h"
 
-@interface HSTipsTableViewController : UITableViewController
+@interface HSTipsTableViewController : UITableViewController <SWTableViewCellDelegate>
 
 @end

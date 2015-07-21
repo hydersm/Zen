@@ -14,4 +14,8 @@
 
 + (HSTipsData *)sharedInstance;
 
+- (void)generateTips;
+- (void)saveData;
+- (void)loadData;
+
 @end

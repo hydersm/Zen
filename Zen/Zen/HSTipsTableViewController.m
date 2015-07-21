@@ -72,6 +72,7 @@
     
     cell.leftUtilityButtons = [self leftButtons];
     cell.tip = [HSTipsData sharedInstance].tips[indexPath.row];
+    cell.delegate = self;
     
     return cell;
 }
@@ -89,14 +90,33 @@
     NSMutableArray *leftUtilityButtons = [NSMutableArray new];
     
     [leftUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:0.07 green:0.75f blue:0.16f alpha:1.0]
-                                                icon:[UIImage imageNamed:@"check.png"]];
-     
-    [leftUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:1.0f green:0.231f blue:0.188f alpha:1.0]
+     [UIColor colorWithRed:1.0f green:0.231f blue:0.188f alpha:1]
                                                 icon:[UIImage imageNamed:@"cross.png"]];
     
+    [leftUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor colorWithRed:0.07 green:0.75f blue:0.16f alpha:1]
+                                                icon:[UIImage imageNamed:@"check.png"]];
+    
     return leftUtilityButtons;
+}
+
+// click event on left utility button
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index {
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    [[HSTipsData sharedInstance].tips removeObjectAtIndex:indexPath.row];
+    
+    if(index == 0) {
+        //cross button
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    } else if (index == 1) {
+        //check button
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+    }
+    
+    
+    
+    NSLog(@"Removing row %li", (long)indexPath.row);
 }
 
 /*
