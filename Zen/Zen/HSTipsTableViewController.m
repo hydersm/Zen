@@ -67,11 +67,10 @@
         
         [tableView registerNib:[UINib nibWithNibName:@"HSTipsTableViewCell" bundle:nil] forCellReuseIdentifier:@"HSTipsTableViewCell"];
         cell = [tableView dequeueReusableCellWithIdentifier:@"HSTipsTableViewCell"];
-        cell.leftUtilityButtons = [self leftButtons];
-        
         
     }
     
+    cell.leftUtilityButtons = [self leftButtons];
     cell.tip = [HSTipsData sharedInstance].tips[indexPath.row];
     
     return cell;
