@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWTableViewCell.h"
 
-@interface HSTipsTableViewCell : UITableViewCell
+@interface HSTipsTableViewCell : SWTableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *tipLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;

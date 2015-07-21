@@ -42,11 +42,17 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
         self.lineChartView.dataSource = self;
         self.lineChartView.delegate = self;
         
+        HSData *data = [HSDataContainer sharedInstance].dataHistory[0];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSDate *date = [dateFormatter dateFromString:data.date];
+        [dateFormatter setDateFormat:@"LLL dd, yyyy hh:mm a"];
+        
         JBLineChartFooterView *footerView = [[JBLineChartFooterView alloc] initWithFrame:CGRectMake(kJBAreaChartViewControllerChartPadding, ceil(placeholderView.bounds.size.height * 0.5) - ceil(kJBAreaChartViewControllerChartFooterHeight * 0.5), placeholderView.bounds.size.width - (kJBAreaChartViewControllerChartPadding * 2), kJBAreaChartViewControllerChartFooterHeight)];
         footerView.backgroundColor = [UIColor clearColor];
-        footerView.leftLabel.text = @"2 days ago";
+        footerView.leftLabel.text = [dateFormatter stringFromDate:date];
         footerView.leftLabel.textColor = [UIColor grayColor];
-        footerView.rightLabel.text = @"Today";
+        footerView.rightLabel.text = @"Now";
         footerView.rightLabel.textColor = [UIColor grayColor];
         footerView.sectionCount = 7;
         self.lineChartView.footerView = footerView;
@@ -55,7 +61,7 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
         
         for(int i = 0; i < [HSDataContainer sharedInstance].dataHistory.count; i ++) {
             
-            int val =[self getValueAtIndexReverse:i];
+            int val =[self getValueAtIndex:i];
             if(val > max)
                 max = val;
             
@@ -69,10 +75,20 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
         
         
         [self.lineChartView reloadData];
+        
+        [[NSNotificationCenter defaultCenter]
+         addObserver:self
+         selector:@selector(dataUpdated)
+         name:@"HSDataUpdated"
+         object:nil];
     }
     
     return self;
     
+}
+
+- (void)dataUpdated {
+    [self.lineChartView reloadData];
 }
 
 #pragma mark Line Chart Stuff
@@ -87,7 +103,7 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
 
 - (CGFloat)lineChartView:(JBLineChartView *)lineChartView verticalValueForHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex {
     
-    return [self getValueAtIndexReverse:(int)horizontalIndex];
+    return [self getValueAtIndex:(int)horizontalIndex];
     
 }
 
@@ -130,7 +146,7 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
     }
     
     [self setTooltipVisible:YES animated:YES atTouchPoint:touchPoint];
-    NSNumber *num = [NSNumber numberWithInt:[self getValueAtIndexReverse:(int)horizontalIndex]];
+    NSNumber *num = [NSNumber numberWithInt:[self getValueAtIndex:(int)horizontalIndex]];
     [self.tooltipView setText:[num stringValue]];
     
 }
@@ -143,10 +159,14 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
 
 #pragma mark tool tip
 
-- (int) getValueAtIndexReverse:(int) index {
+//- (int) getValueAtIndexReverse:(int) index {
+//    NSUInteger reverseIndex = [HSDataContainer sharedInstance].dataHistory.count - index - 1;
+//    return [self getValueAtIndexReverse:reverseIndex];
+//}
+
+- (int) getValueAtIndex:(int)index {
     HSDataContainer *dataContainer = [HSDataContainer sharedInstance];
-    NSUInteger reverseIndex = dataContainer.dataHistory.count - index - 1;
-    HSData *data = [dataContainer.dataHistory objectAtIndex:reverseIndex];
+    HSData *data = [dataContainer.dataHistory objectAtIndex:index];
     
     int val = 0;
     
@@ -156,15 +176,18 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
             break;
         case BPM_CHART:
             val = data.heartRate.intValue;
+            break;
         case IBI_CHART:
             val = data.ibi.intValue;
+            break;
         case GSR_CHART:
             val = data.gsr.intValue;
+            break;
         default:
             break;
     }
     
-    return val;
+    return val > 0? val: 0;
 }
 
 - (void)setTooltipVisible:(BOOL)tooltipVisible animated:(BOOL)animated atTouchPoint:(CGPoint)touchPoint

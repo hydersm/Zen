@@ -23,29 +23,40 @@
         
         _sharedInstance.dataHistory = [[NSMutableArray alloc] init];
         
-        //connection stuff
-        NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
-        NSDate *now = [NSDate date];
-        NSDate *twoDaysAgo = [now dateByAddingTimeInterval:-2*24*60*60];
+        [_sharedInstance requestData];
+        [NSTimer scheduledTimerWithTimeInterval:120.0 target:_sharedInstance
+                                       selector:@selector(requestData) userInfo:nil repeats:YES];
         
-        _sharedInstance.responseData = [[NSMutableData alloc] init];
         
-        NSMutableString *url = [[NSMutableString alloc] init];
-        [url appendString:@"http://adipruthi.com/api/get_data.php?uid=poop88&start="];
-        [url appendString:[dateFormatter stringFromDate:twoDaysAgo]];
-        [url appendString:@"&end="];
-        [url appendString:[dateFormatter stringFromDate:now]];
-        NSLog(@"get request: %@", url);
-        NSURLRequest *request = [NSURLRequest requestWithURL:
-                                 [NSURL URLWithString:url]];
-        
-        [[NSURLConnection alloc] initWithRequest:request delegate:_sharedInstance];
         
     }
     
     return _sharedInstance;
     
+}
+
+//scheduled call
+-(void)requestData {
+    
+    //request from data from db
+    NSLog(@"Requesting Data");
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
+    NSDate *now = [NSDate date];
+    NSDate *twoDaysAgo = [now dateByAddingTimeInterval:-7*24*60*60];
+    
+    self.responseData = [[NSMutableData alloc] init];
+    
+    NSMutableString *url = [[NSMutableString alloc] init];
+    [url appendString:@"http://adipruthi.com/api/get_data.php?uid=tommy666&start="];
+    [url appendString:[dateFormatter stringFromDate:twoDaysAgo]];
+    [url appendString:@"&end="];
+    [url appendString:[dateFormatter stringFromDate:now]];
+    NSLog(@"get request: %@", url);
+    NSURLRequest *request = [NSURLRequest requestWithURL:
+                             [NSURL URLWithString:url]];
+    
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
 //connection
@@ -66,7 +77,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSLog(@"connectionDidFinishLoading");
     //    NSLog(@"Succeeded! Received %d bytes of data",[self.responseData length]);
-    NSLog([[NSString alloc] initWithData:self.responseData encoding:NSASCIIStringEncoding]);
+//    NSLog([[NSString alloc] initWithData:self.responseData encoding:NSASCIIStringEncoding]);
     
     // convert to JSON
     NSError *myError = nil;

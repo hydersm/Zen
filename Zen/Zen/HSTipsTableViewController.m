@@ -21,7 +21,9 @@
     
     
     self.tableView.allowsSelection = NO;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
+    
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -36,6 +38,15 @@
 }
 
 #pragma mark - Table view data source
+
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        [[HSTipsData sharedInstance].tips removeObjectAtIndex:indexPath.row];
+//        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//    } else {
+//        NSLog(@"Unhandled editing style");
+//    }
+//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -56,6 +67,8 @@
         
         [tableView registerNib:[UINib nibWithNibName:@"HSTipsTableViewCell" bundle:nil] forCellReuseIdentifier:@"HSTipsTableViewCell"];
         cell = [tableView dequeueReusableCellWithIdentifier:@"HSTipsTableViewCell"];
+        cell.leftUtilityButtons = [self leftButtons];
+        
         
     }
     
@@ -68,7 +81,23 @@
 {
     CGRect fontSize = [@"A" boundingRectWithSize:CGSizeMake(320, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:[NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:16.0] forKey:NSFontAttributeName] context:nil];
     
-    return fontSize.size.height * 8;
+    return fontSize.size.height * 6.5;
+}
+
+#pragma mark cell helpers
+- (NSArray *)leftButtons
+{
+    NSMutableArray *leftUtilityButtons = [NSMutableArray new];
+    
+    [leftUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor colorWithRed:0.07 green:0.75f blue:0.16f alpha:1.0]
+                                                icon:[UIImage imageNamed:@"check.png"]];
+     
+    [leftUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor colorWithRed:1.0f green:0.231f blue:0.188f alpha:1.0]
+                                                icon:[UIImage imageNamed:@"cross.png"]];
+    
+    return leftUtilityButtons;
 }
 
 /*

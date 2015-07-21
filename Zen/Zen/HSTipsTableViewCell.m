@@ -20,10 +20,15 @@
 }
 
 - (void)awakeFromNib {
+    self.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
+    self.containerView.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1];
     self.containerView.layer.borderColor = [UIColor colorWithRed:177/255.0 green:177/255.0 blue:177/255.0 alpha:1.0].CGColor;
-    self.containerView.layer.borderWidth = 1;
+//    self.containerView.layer.borderWidth = 1;
     self.containerView.layer.cornerRadius = 5.0;
     self.containerView.layer.masksToBounds = YES;
+    
+    //buttons
+    
     
 }
 

@@ -7,26 +7,29 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HSTipsTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="147" id="KGk-i7-Jjw" customClass="HSTipsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="147"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8FW-m7-FNn" userLabel="ContainerView">
-                        <rect key="frame" x="8" y="8" width="304" height="144"/>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8FW-m7-FNn" userLabel="ContainerView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="159.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixg-ZF-k3m" userLabel="Time">
-                                <rect key="frame" x="9" y="110" width="287" height="26"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="200" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eL-Cp-YAK" userLabel="Tip">
-                                <rect key="frame" x="9" y="8" width="287" height="94"/>
+                                <rect key="frame" x="8" y="8" width="304" height="101"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixg-ZF-k3m" userLabel="Time">
+                                <rect key="frame" x="8" y="117" width="304" height="25.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="5Yh-ya-uv9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -36,8 +39,9 @@
                             <constraint firstItem="7eL-Cp-YAK" firstAttribute="leading" secondItem="8FW-m7-FNn" secondAttribute="leading" constant="9" id="61y-nx-2uG"/>
                             <constraint firstAttribute="trailing" secondItem="7eL-Cp-YAK" secondAttribute="trailing" constant="8" id="ASW-id-I5n"/>
                             <constraint firstItem="7eL-Cp-YAK" firstAttribute="top" secondItem="8FW-m7-FNn" secondAttribute="top" constant="8" id="FWI-kV-ZxU"/>
+                            <constraint firstItem="Ixg-ZF-k3m" firstAttribute="top" secondItem="7eL-Cp-YAK" secondAttribute="bottom" constant="15" id="Gqg-xU-w3M"/>
                             <constraint firstItem="7eL-Cp-YAK" firstAttribute="top" secondItem="8FW-m7-FNn" secondAttribute="top" constant="8" id="M4C-AL-icW"/>
-                            <constraint firstItem="Ixg-ZF-k3m" firstAttribute="leading" secondItem="8FW-m7-FNn" secondAttribute="leading" constant="9" id="NIz-H1-k6p"/>
+                            <constraint firstItem="Ixg-ZF-k3m" firstAttribute="leading" secondItem="8FW-m7-FNn" secondAttribute="leading" constant="8" id="NIz-H1-k6p"/>
                             <constraint firstItem="Ixg-ZF-k3m" firstAttribute="leading" secondItem="8FW-m7-FNn" secondAttribute="leading" constant="8" id="NK3-mW-6GP"/>
                             <constraint firstAttribute="trailing" secondItem="Ixg-ZF-k3m" secondAttribute="trailing" constant="8" id="Pad-j9-sva"/>
                             <constraint firstAttribute="trailing" secondItem="Ixg-ZF-k3m" secondAttribute="trailing" constant="8" id="Rny-DY-QbT"/>
@@ -47,6 +51,7 @@
                             <constraint firstItem="Ixg-ZF-k3m" firstAttribute="top" secondItem="7eL-Cp-YAK" secondAttribute="bottom" constant="8" id="hYB-Ei-Cby"/>
                             <constraint firstAttribute="bottom" secondItem="Ixg-ZF-k3m" secondAttribute="bottom" constant="8" id="iKU-RA-UaG"/>
                             <constraint firstAttribute="bottom" secondItem="Ixg-ZF-k3m" secondAttribute="bottom" constant="8" id="rK6-X4-rc8"/>
+                            <constraint firstItem="Ixg-ZF-k3m" firstAttribute="top" secondItem="7eL-Cp-YAK" secondAttribute="bottom" constant="8" id="s0n-4h-g1r"/>
                             <constraint firstItem="Ixg-ZF-k3m" firstAttribute="top" secondItem="7eL-Cp-YAK" secondAttribute="bottom" constant="8" id="ukz-ub-kf8"/>
                             <constraint firstAttribute="trailing" secondItem="7eL-Cp-YAK" secondAttribute="trailing" constant="8" id="vSw-ZG-GXR"/>
                             <constraint firstItem="7eL-Cp-YAK" firstAttribute="top" secondItem="8FW-m7-FNn" secondAttribute="top" constant="8" id="w4M-6n-URR"/>
@@ -59,9 +64,11 @@
                                 <exclude reference="c33-cN-uza"/>
                                 <exclude reference="vSw-ZG-GXR"/>
                                 <exclude reference="w4M-6n-URR"/>
+                                <exclude reference="Gqg-xU-w3M"/>
                                 <exclude reference="NK3-mW-6GP"/>
                                 <exclude reference="Rny-DY-QbT"/>
                                 <exclude reference="TpM-hn-HHm"/>
+                                <exclude reference="hYB-Ei-Cby"/>
                                 <exclude reference="iKU-RA-UaG"/>
                                 <exclude reference="ukz-ub-kf8"/>
                             </mask>
@@ -80,7 +87,7 @@
                 <outlet property="timeLabel" destination="Ixg-ZF-k3m" id="j4X-3l-u3W"/>
                 <outlet property="tipLabel" destination="7eL-Cp-YAK" id="oS6-j2-SBd"/>
             </connections>
-            <point key="canvasLocation" x="457" y="399"/>
+            <point key="canvasLocation" x="457" y="392.5"/>
         </tableViewCell>
     </objects>
 </document>
