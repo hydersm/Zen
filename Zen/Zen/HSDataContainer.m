@@ -48,7 +48,7 @@
     self.responseData = [[NSMutableData alloc] init];
     
     NSMutableString *url = [[NSMutableString alloc] init];
-    [url appendString:@"http://adipruthi.com/api/get_data.php?uid=tommy666&start="];
+    [url appendString:@"http://adipruthi.com/api/get_data.php?uid=Talebzadeh&start="];
     [url appendString:[dateFormatter stringFromDate:twoDaysAgo]];
     [url appendString:@"&end="];
     [url appendString:[dateFormatter stringFromDate:now]];

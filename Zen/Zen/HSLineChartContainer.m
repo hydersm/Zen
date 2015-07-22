@@ -152,8 +152,12 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
     }
     
     [self setTooltipVisible:YES animated:YES atTouchPoint:touchPoint];
-    NSNumber *num = [NSNumber numberWithInt:[self getValueAtIndex:(int)horizontalIndex]];
-    [self.tooltipView setText:[num stringValue]];
+    double val = [self getValueAtIndex:(int)horizontalIndex];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setMaximumFractionDigits:2];
+    [formatter setRoundingMode: NSNumberFormatterRoundUp];
+    [self.tooltipView setText:[formatter stringFromNumber:[NSNumber numberWithDouble:val]]];
     
 }
 
@@ -170,11 +174,11 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
 //    return [self getValueAtIndexReverse:reverseIndex];
 //}
 
-- (int) getValueAtIndex:(int)index {
+- (double) getValueAtIndex:(int)index {
     HSDataContainer *dataContainer = [HSDataContainer sharedInstance];
     HSData *data = [dataContainer.dataHistory objectAtIndex:index];
     
-    int val = 0;
+    double val = 0;
     
     switch (_chartType) {
         case STRESS_CHART:
@@ -187,7 +191,7 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
             val = data.ibi.intValue;
             break;
         case GSR_CHART:
-            val = data.gsr.intValue;
+            val = data.gsr.doubleValue;
             break;
         default:
             break;

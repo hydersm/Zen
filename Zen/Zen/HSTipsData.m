@@ -292,7 +292,6 @@
             [self.tips addObject:tipO];
     }
     
-    [self saveData];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"HSTipsUpdated" object:nil userInfo:nil];
     
 }

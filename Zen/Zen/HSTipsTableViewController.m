@@ -98,7 +98,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     HSTip *tip = [HSTipsData sharedInstance].tips[indexPath.row];
-    NSString *sizeString = [tip.tipString stringByAppendingString:@"\n \n"];
+    NSString *sizeString = [tip.tipString stringByAppendingString:@"\n \n \n"];
     
     CGSize size = [sizeString sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0]
                    constrainedToSize:CGSizeMake(280, CGFLOAT_MAX)
