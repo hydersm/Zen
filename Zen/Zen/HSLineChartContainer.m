@@ -42,17 +42,19 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
         self.lineChartView.dataSource = self;
         self.lineChartView.delegate = self;
         
-        HSData *data = [HSDataContainer sharedInstance].dataHistory[0];
+        HSData *oldData = [HSDataContainer sharedInstance].dataHistory[0];
+        HSData *newData = [[HSDataContainer sharedInstance].dataHistory lastObject];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-        NSDate *date = [dateFormatter dateFromString:data.date];
+        NSDate *oldDate = [dateFormatter dateFromString:oldData.date];
+        NSDate *newDate = [dateFormatter dateFromString:newData.date];
         [dateFormatter setDateFormat:@"LLL dd, yyyy hh:mm a"];
         
         JBLineChartFooterView *footerView = [[JBLineChartFooterView alloc] initWithFrame:CGRectMake(kJBAreaChartViewControllerChartPadding, ceil(placeholderView.bounds.size.height * 0.5) - ceil(kJBAreaChartViewControllerChartFooterHeight * 0.5), placeholderView.bounds.size.width - (kJBAreaChartViewControllerChartPadding * 2), kJBAreaChartViewControllerChartFooterHeight)];
         footerView.backgroundColor = [UIColor clearColor];
-        footerView.leftLabel.text = [dateFormatter stringFromDate:date];
+        footerView.leftLabel.text = [dateFormatter stringFromDate:oldDate];
         footerView.leftLabel.textColor = [UIColor grayColor];
-        footerView.rightLabel.text = @"Now";
+        footerView.rightLabel.text = [dateFormatter stringFromDate:newDate];
         footerView.rightLabel.textColor = [UIColor grayColor];
         footerView.sectionCount = 7;
         self.lineChartView.footerView = footerView;

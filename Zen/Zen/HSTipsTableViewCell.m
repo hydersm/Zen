@@ -15,7 +15,6 @@
     self.tipLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.tipLabel.text = [tip stringByAppendingString:@" \n \n \n \n \n \n \n \n \n \n \n \n \n \n"];
     self.tipLabel.numberOfLines = 100;
-    self.timeLabel.text = @"Just now";
     
 }
 

@@ -22,6 +22,9 @@
     self.navigationItem.title = @"Analytics";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(cancelButtonPressed)];
     
+    self.tipsCompletedLabel.text = [NSString stringWithFormat:@"%d", [HSTipsData sharedInstance].tipsCompleted];
+    self.tipsIgnoredLabel.text = [NSString stringWithFormat:@"%d", [HSTipsData sharedInstance].tipsIgnored];
+    
     self.stressLineChartContainer = [[HSLineChartContainer alloc] initWithPlaceholderView:self.stressLineChartPlaceholder chartType:STRESS_CHART];
     self.stressLineChartContainer.scrollView = ((UIScrollView *)self.view);
     

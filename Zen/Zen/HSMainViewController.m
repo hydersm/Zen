@@ -131,23 +131,28 @@
     HSDataContainer *stressData = [HSDataContainer sharedInstance];
     HSData *lastStress = [stressData.dataHistory lastObject];
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *newDate = [dateFormatter dateFromString:lastStress.date];
+    [dateFormatter setDateFormat:@"LLL dd, yyyy hh:mm a"];
+    
     if(index == 0) {
         childViewController = [[HSStressPageViewController alloc] initWitLabel:@"Stress Score" nibName:@"HSStressPageViewController" bundle:nil];
         if(lastStress.stress != nil) {
             childViewController.numberString = lastStress.stress;
-            childViewController.numberSecondaryLabelString = @"as of 5 minutes";
+            childViewController.numberSecondaryLabelString = [dateFormatter stringFromDate:newDate];
         }
     } else if (index == 1) {
         childViewController = [[HSStressPageViewController alloc] initWitLabel:@"Heart Rate" nibName:@"HSStressPageViewController" bundle:nil];
         if(lastStress.heartRate != nil) {
             childViewController.numberString = lastStress.heartRate;
-            childViewController.numberSecondaryLabelString = @"as of 5 minutes";
+            childViewController.numberSecondaryLabelString = [dateFormatter stringFromDate:newDate];
         }
     } else if (index == 2) {
         childViewController = [[HSStressPageViewController alloc] initWitLabel:@"Galvanic Skin Response" nibName:@"HSStressPageViewController" bundle:nil];
         if(lastStress.gsr != nil) {
             childViewController.numberString = lastStress.gsr;
-            childViewController.numberSecondaryLabelString = @"as of 5 minutes";
+            childViewController.numberSecondaryLabelString = [dateFormatter stringFromDate:newDate];
         }
     } else {
         

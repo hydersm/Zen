@@ -87,6 +87,12 @@
 
 - (void)dataUpdated {
     HSData *lastData = [[HSDataContainer sharedInstance].dataHistory lastObject];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *newDate = [dateFormatter dateFromString:lastData.date];
+    [dateFormatter setDateFormat:@"LLL dd, yyyy hh:mm a"];
+    self.numberSecondaryLabelString = [dateFormatter stringFromDate:newDate];
+    
     if([self.numberLabelString isEqualToString:@"Stress Score"]) {
         self.numberString = lastData.stress;
     } else if ([self.numberLabelString isEqualToString:@"Heart Rate"]) {

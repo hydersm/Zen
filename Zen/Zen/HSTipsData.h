@@ -12,6 +12,8 @@
 @interface HSTipsData : NSObject
 
 @property (strong, nonatomic) NSMutableArray *tips;
+@property (nonatomic, assign) int tipsCompleted;
+@property (nonatomic, assign) int tipsIgnored;
 
 + (HSTipsData *)sharedInstance;
 

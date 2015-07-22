@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HSUIUtils.h"
 #import "HSLineChartContainer.h"
+#import "HSTipsData.h"
 
 @interface HSGraphViewController : UIViewController
 
@@ -16,6 +17,8 @@
 @property (strong, nonatomic) IBOutlet UIView *hrLineChartPlaceholder;
 @property (strong, nonatomic) IBOutlet UIView *ibiLineChartPlaceholder;
 @property (strong, nonatomic) IBOutlet UIView *gsrLineChartPlaceholder;
+@property (strong, nonatomic) IBOutlet UILabel *tipsIgnoredLabel;
+@property (strong, nonatomic) IBOutlet UILabel *tipsCompletedLabel;
 
 @property (strong, nonatomic) HSLineChartContainer *stressLineChartContainer;
 @property (strong) HSLineChartContainer *hrLineChartContainer;

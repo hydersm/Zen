@@ -29,4 +29,19 @@
     return equal;
 }
 
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    //Encode properties, other class variables, etc
+    [encoder encodeObject:self.tipString forKey:@"HSTipsString"];
+    [encoder encodeObject:self.dateCreated forKey:@"HSTipsDateCreated"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if((self = [super init])) {
+        //decode properties, other class vars
+        self.tipString = [decoder decodeObjectForKey:@"HSTipsString"];
+        self.dateCreated = [decoder decodeObjectForKey:@"HSTipsDateCreated"];
+    }
+    return self;
+}
+
 @end

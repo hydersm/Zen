@@ -132,9 +132,11 @@
     if(index == 0) {
         //cross button
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [HSTipsData sharedInstance].tipsIgnored++;
     } else if (index == 1) {
         //check button
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [HSTipsData sharedInstance].tipsCompleted++;
     }
     
 }

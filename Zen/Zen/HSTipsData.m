@@ -256,16 +256,24 @@
 
 - (void)saveData {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:self.tips forKey:@"HSTips"];
+    NSData *encodedTips = [NSKeyedArchiver archivedDataWithRootObject:self.tips];
+    [userDefaults setObject:encodedTips forKey:@"HSTipsArray"];
+    [userDefaults setInteger:self.tipsCompleted forKey:@"HSTipsCompleted"];
+    [userDefaults setInteger:self.tipsIgnored forKey:@"HSTipsIgnored"];
     [userDefaults synchronize];
 }
 
 - (void)loadData {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    self.tips = [NSMutableArray arrayWithArray:[userDefaults objectForKey:@"HSTips"]];
+    NSData *encodedTips = [userDefaults objectForKey:@"HSTipsArray"];
+    self.tips = [NSKeyedUnarchiver unarchiveObjectWithData:encodedTips];
+    self.tipsCompleted = (int)[userDefaults integerForKey:@"HSTipsCompleted"];
+    self.tipsIgnored = (int)[userDefaults integerForKey:@"HSTipsIgnored"];
+    
     if(self.tips == nil) {
         self.tips = [[NSMutableArray alloc] init];
     }
+    
 }
 
 - (void)generateTipsWithActualStress:(int)actualStress userStress:(double)userStress location:(NSString *)location activity:(NSString *)activity {
@@ -284,6 +292,7 @@
             [self.tips addObject:tipO];
     }
     
+    [self saveData];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"HSTipsUpdated" object:nil userInfo:nil];
     
 }

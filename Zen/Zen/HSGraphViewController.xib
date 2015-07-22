@@ -10,11 +10,13 @@
                 <outlet property="hrLineChartPlaceholder" destination="AXm-4w-vEu" id="KAF-LB-QCX"/>
                 <outlet property="ibiLineChartPlaceholder" destination="cvT-uT-HUT" id="v1B-To-J9R"/>
                 <outlet property="stressLineChartPlaceholder" destination="1FS-7G-Iw7" id="b9v-V2-BfJ"/>
+                <outlet property="tipsCompletedLabel" destination="RCB-Cg-Jhg" id="CZW-N7-yEW"/>
+                <outlet property="tipsIgnoredLabel" destination="zjG-LK-dLv" id="dyI-va-N11"/>
                 <outlet property="view" destination="gYJ-Up-PHE" id="Zqk-2K-Zae"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="gYJ-Up-PHE">
+        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gYJ-Up-PHE">
             <rect key="frame" x="0.0" y="0.0" width="320" height="1076"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
