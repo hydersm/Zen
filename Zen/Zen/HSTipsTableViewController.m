@@ -123,7 +123,7 @@
     return leftUtilityButtons;
 }
 
-// click event on left utility button
+// sw cell delegates
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index {
     
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
@@ -131,15 +131,18 @@
     
     if(index == 0) {
         //cross button
-        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     } else if (index == 1) {
         //check button
-        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
     
-    
-    
-    NSLog(@"Removing row %li", (long)indexPath.row);
+}
+
+- (BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell
+{
+    // allow just one cell's utility button to be open at once
+    return YES;
 }
 
 /*
