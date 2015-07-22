@@ -87,6 +87,10 @@ NSInteger const kJBAreaChartViewControllerMaxNumChartPoints = 12;
     
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)dataUpdated {
     [self.lineChartView reloadData];
 }
