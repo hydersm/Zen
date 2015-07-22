@@ -87,9 +87,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGRect fontSize = [@"A" boundingRectWithSize:CGSizeMake(320, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:[NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:16.0] forKey:NSFontAttributeName] context:nil];
+    NSString *tip = [HSTipsData sharedInstance].tips[indexPath.row];
+    tip = [tip stringByAppendingString:@"\n \n"];
     
-    return fontSize.size.height * 6.5;
+//    CGRect fontSize = [tip boundingRectWithSize:CGSizeMake(200, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:17.0]} context:nil];
+//
+//    return fontSize.size.height;
+    CGSize size = [tip sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0]
+                   constrainedToSize:CGSizeMake(280, CGFLOAT_MAX)
+                       lineBreakMode:UILineBreakModeWordWrap];
+    
+    return size.height;
 }
 
 #pragma mark cell helpers
