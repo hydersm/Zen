@@ -83,6 +83,8 @@
     NSError *myError = nil;
     NSArray *resA = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
     
+    self.dataHistory = [[NSMutableArray alloc] init];
+    
     for(int i = 0; i < resA.count; i++) {
         
         NSDictionary *resO = [resA objectAtIndex:i];
