@@ -279,8 +279,9 @@
     
     for (NSString *tipKey in tipsToAdd) {
         NSString *tip = self.tipsDictionary[tipKey];
-        if(![self.tips containsObject:tip])
-            [self.tips addObject:tip];
+        HSTip *tipO = [[HSTip alloc] initWithTip:tip DateCreated:[NSDate date]];
+        if(![self.tips containsObject:tipO])
+            [self.tips addObject:tipO];
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"HSTipsUpdated" object:nil userInfo:nil];

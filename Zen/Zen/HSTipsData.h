@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HSTip.h"
 
 @interface HSTipsData : NSObject
 

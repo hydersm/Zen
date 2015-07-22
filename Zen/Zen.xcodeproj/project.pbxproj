@@ -40,7 +40,7 @@
 		3C88CD8B1B47145F002A7800 /* HSUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C88CD8A1B47145F002A7800 /* HSUIUtils.m */; };
 		3C88CD931B479212002A7800 /* HSDataContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C88CD921B479212002A7800 /* HSDataContainer.m */; };
 		3C9BA6851B4644C300DD0DF8 /* HSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BA6841B4644C300DD0DF8 /* HSMainViewController.m */; };
-		3CC2D59E1B5F191D00373458 /* HSTips.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2D59D1B5F191D00373458 /* HSTips.m */; };
+		3CC2D59E1B5F191D00373458 /* HSTip.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2D59D1B5F191D00373458 /* HSTip.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,8 +121,8 @@
 		3C88CD921B479212002A7800 /* HSDataContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDataContainer.m; sourceTree = "<group>"; };
 		3C9BA6831B4644C300DD0DF8 /* HSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMainViewController.h; sourceTree = "<group>"; };
 		3C9BA6841B4644C300DD0DF8 /* HSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMainViewController.m; sourceTree = "<group>"; };
-		3CC2D59C1B5F191D00373458 /* HSTips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSTips.h; sourceTree = "<group>"; };
-		3CC2D59D1B5F191D00373458 /* HSTips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSTips.m; sourceTree = "<group>"; };
+		3CC2D59C1B5F191D00373458 /* HSTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSTip.h; sourceTree = "<group>"; };
+		3CC2D59D1B5F191D00373458 /* HSTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSTip.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,8 +341,8 @@
 				3C131DA01B5B70D70052B208 /* HSData.m */,
 				3C88CD911B479212002A7800 /* HSDataContainer.h */,
 				3C88CD921B479212002A7800 /* HSDataContainer.m */,
-				3CC2D59C1B5F191D00373458 /* HSTips.h */,
-				3CC2D59D1B5F191D00373458 /* HSTips.m */,
+				3CC2D59C1B5F191D00373458 /* HSTip.h */,
+				3CC2D59D1B5F191D00373458 /* HSTip.m */,
 				3C5245521B487A2700708159 /* HSTipsData.h */,
 				3C5245531B487A2700708159 /* HSTipsData.m */,
 			);
@@ -478,7 +478,7 @@
 				3C0A25381B5396BE0060D7FD /* JBChartTooltipView.m in Sources */,
 				3C5245571B48858D00708159 /* HSTipsTableViewController.m in Sources */,
 				3C131DAC1B5C7B080052B208 /* HSGraphViewController.m in Sources */,
-				3CC2D59E1B5F191D00373458 /* HSTips.m in Sources */,
+				3CC2D59E1B5F191D00373458 /* HSTip.m in Sources */,
 				3C3043511B5DFD8A00C60A25 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				3C131DA71B5C17E40052B208 /* HSLineChartContainer.m in Sources */,
 				3C2644911B43C6A10011C8A8 /* Zen.xcdatamodeld in Sources */,

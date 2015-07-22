@@ -82,22 +82,25 @@
         
     }
     
+    HSTip *tipO = [HSTipsData sharedInstance].tips[indexPath.row];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"LLL dd, yyyy hh:mm a"];
+    
     cell.leftUtilityButtons = [self leftButtons];
-    cell.tip = [HSTipsData sharedInstance].tips[indexPath.row];
+    cell.tip = tipO.tipString;
+    cell.timeLabel.text = [dateFormatter stringFromDate:tipO.dateCreated];
     cell.delegate = self;
+    [cell.superview bringSubviewToFront:cell];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *tip = [HSTipsData sharedInstance].tips[indexPath.row];
-    tip = [tip stringByAppendingString:@"\n \n"];
+    HSTip *tip = [HSTipsData sharedInstance].tips[indexPath.row];
+    NSString *sizeString = [tip.tipString stringByAppendingString:@"\n \n"];
     
-//    CGRect fontSize = [tip boundingRectWithSize:CGSizeMake(200, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:17.0]} context:nil];
-//
-//    return fontSize.size.height;
-    CGSize size = [tip sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0]
+    CGSize size = [sizeString sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0]
                    constrainedToSize:CGSizeMake(280, CGFLOAT_MAX)
                        lineBreakMode:UILineBreakModeWordWrap];
     
